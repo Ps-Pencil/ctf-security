@@ -1,0 +1,23 @@
+#!/bin/bash
+
+function bandit(){
+    usage="bandit [bandit_no]"
+    if [ "$#" != "1" ]
+    then
+        echo $usage
+        exit 1
+    fi
+    if [ -f flags* ]
+    then
+        flag_file=`ls flags*|head -n1`
+        username="bandit$1"
+        password=`cut -f2 -d' ' $flag_file | head -n$1 | tail -n1`
+        host="bandit.labs.overthewire.org"
+        # will not work if password contains weird characters
+        sshpass -p "$password" ssh ${username}@${host}
+    else
+        echo "Expecting flags file"
+        exit 1
+    fi
+}
+

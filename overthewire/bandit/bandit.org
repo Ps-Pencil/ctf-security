@@ -1,0 +1,130 @@
+* 0
+  just ~ssh bandit0@bandit.labs.overthewire.org~
+  password bandit0
+  flag in readme
+* 1
+  flag in file called ~-~
+  just ~cat ./-~
+* 2
+  spaces in file name
+  just use tab completion.
+* 3
+  hidden file in ~inhere~ dir
+  just ~ls -a~
+* 4
+  human readable file in ~inhere~ dir
+  use ~file~ and look for ~ASCII text~
+  note file names start with ~-~
+* 5
+  human readable, 1033 bytes, not executable
+  use ~find . -not -executable -size 1033c~ is actually enough (only one file)
+  default size unit for ~find~ is 512-byte block
+* 6
+  owned by bandit7, owned by group bandit6, 33 bytes in size
+  dig the find manual, found ~-user~ and ~-group~. Add redirection to supress permission denied messages
+  ~cat `find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`~
+* 7
+  in ~data.txt~ next to the word millionth
+  ~grep millionth data.txt~
+* 8
+  in ~data.txt~ only line that occurs once
+  ~uniq -u~ seems to do the trick. but needs repeated lines to be adjacent. ~sort~ first.
+  ~sort data.txt|uniq -u~
+* 9
+  in ~data.txt~, one of the few human readable strings. start with a few ~=~
+  ~strings data.txt |grep ===~
+* 10
+  in ~data.txt~ base64 encoded
+  ~base64 -d data.txt~
+* 11
+  ROT13. just use ~tr~
+  ~tr a-zA-Z n-za-mN-ZA-M < data.txt~
+* 12
+  ~data.txt~ repeatedly compressed
+  ~mkdir bandit12~
+  ~cp ~/data.txt .~
+  ~xxd -r data.txt data~
+  ~file data~ found it's gzip 
+  ~mv data data.gz && gunzip data.gz~ gzip actually requires file suffix.
+  ~file data~ found it's bzip2
+  ~bunzip2 data~ 
+  ~data.out~ gzip again
+  ~mv data.out data.gz && gunzip data.gz~
+  ~data~ is tar archive this time
+  ~tar xvf data~
+  ~tar xvf data5.bin~
+  ~tar xvf data6.bin~
+  ~tar xvf data8.bin~
+  ~mv data8.bin data8.gz && gunzip data8.gz~
+  final flag in data8
+* 13
+  password in ~/etc/bandit_pass/bandit14~ only readable by bandit14
+  get a ~sshkey.private~
+  ~ssh -i sshkey.private bandit14@localhost~
+* 14
+  submit password of current level to port 30000 on localhost
+  ~cat /etc/bandit_pass/bandit14 | nc localhost 30000~
+* 15
+  submit password of current level to port 30001 on localhost via SSL encryption
+  read on ~openssl s_client~
+  ~ign_eof~ prevents the server from closing down connection when EOF is reached (so it can sent us back the outcome).
+  ~cat /etc/bandit_pass/bandit15|openssl s_client -connect localhost:30001 -ign_eof~
+* 16
+  submit password of current level to some port between 31000 and 32000
+  the port must be open and speak SSL. Read ~nmap~
+  nmap doesn't seem to be able to tell which port is the one speaking ssl
+  #+BEGIN_SRC sh
+  # Use sed to extract the ports
+  # tx - jump to label x if matched
+  # d - delete
+  ports=`nmap -p 31000-32000 localhost | sed -e '/^[0-9]\+/s/\([0-9]\+\).*/\1/;tx;d;:x'`
+  for port in $ports
+  do 
+    cat /etc/bandit_pass/bandit16 | openssl s_client -ign_eof -connect localhost:$port 2>/dev/null | grep -A 30 -i correct & 
+  done 
+  kill $(jobs -p)
+  #+END_SRC
+  save private key. ~chmod 600~
+  connect to localhost with bandit17 as usual.
+* 17
+  only line changed between ~passwords.old~ and ~passwords.new~
+  ~diff passwords.old passwords.new~
+* 18
+  logout automatically when logging in 
+  passwords stored in ~readme~ in home dir
+  ~(ssh bandit18@bandit.labs.overthewire.org "cat ~/readme" )~
+* 19
+  setuid
+  ~./bandit20-do cat /etc/bandit_pass/bandit20~
+* 20
+  setuid connects to local port specified on command line.
+  if receive the password for current level, output the password for next level
+  one terminal: ~nc -l 12345~
+  the other: ~./suconnect 12345~
+  first terminal enter the password
+* 21
+  look at ~/etc/cron.d~
+  look at ~cronjob_bandit22~ which points to ~/usr/bin/cronjob_bandit22.sh~ which writes the password into a tmp file
+* 22
+  same as before
+* 23
+  basically it runs everything in ~/var/spool/bandit24~
+  just create a script and cat the passwords. Remember to make the script executable and append to a file you already own. (so you can read it afterwards). Make that file writable by everyone
+* 24
+  daemon listening on port 30002 and given bandit24 password and 4 digit passcode (separated by space) it will give the correct ans. bruteforce
+  #+BEGIN_src sh
+  pass=`cat /etc/bandit_pass/bandit24`
+  for i in {0..9999}
+  do 
+    echo $i 
+    printf "%s %04d\n" $pass $i| nc localhost 30002 >> /tmp/bandit24/brute 2>/dev/null & 
+  done
+  #+END_SRC
+  Then just grep "Correct" or use ~uniq~
+* 25
+  sshkey in home dir
+  see inside ~/etc/passwd~ . found the shell of bandit26 is ~/usr/bin/showtext~ which uses ~more~ to view the ~text.txt~ under the home dir. 
+  from ~man more~ . ~v~ actually starts an editor
+  make the shell window super small so ~more~ doesn't just reture.
+  use ~v~ to start vim and open the password file
+  

